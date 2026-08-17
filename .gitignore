@@ -1,0 +1,37 @@
+# --- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+
+# --- Editors / OS -----------------------------------------------------------
+.DS_Store
+.idea/
+.vscode/
+
+# --- Training artefacts -----------------------------------------------------
+# The per-run learning curves (progress.csv), configs and summaries ARE tracked,
+# so every figure and table can be regenerated with:
+#     python -m src.evaluate && python -m src.analysis
+# What is excluded is the ~50 MB of model checkpoints and TensorBoard event
+# files, which are reproducible from those configs:
+#     python -m src.run_experiments
+experiments/**/tensorboard/
+experiments/**/*.zip
+experiments/**/replay_buffer*
+*.pkl
+
+# --- Dry-run artefacts ------------------------------------------------------
+# Every hardware script can run against a simulated arm.  Its outputs are
+# written to separate paths so a simulated measurement can never be mistaken for
+# a real one — and they are not tracked, for the same reason.
+*.dryrun.json
+results/hardware/dryrun/
+
+# --- Media ------------------------------------------------------------------
+# The finished demo clips are tracked (they are a submission requirement).
+# Raw or intermediate captures are not.
+demo/raw/
+*.mov

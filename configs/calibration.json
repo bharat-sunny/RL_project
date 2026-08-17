@@ -1,0 +1,31 @@
+{
+  "center_mm": [
+    205.0,
+    0.0,
+    155.0
+  ],
+  "half_extent_mm": [
+    30.0,
+    30.0,
+    30.0
+  ],
+  "home_angles_deg": [
+    0.0,
+    -30.0,
+    -30.0,
+    -30.0,
+    0.0,
+    0.0
+  ],
+  "port": "/dev/ttyUSB0",
+  "baud": 1000000,
+  "move_speed": 30,
+  "settle_seconds": 0.35,
+  "notes": "measured by calibrate_workspace.py; all 8 corners within 12 mm at half-extent 30 mm",
+  "verified_on_hardware": true,
+  "derived": {
+    "scale": 0.2,
+    "tolerance_mm": 10.000000000000002,
+    "max_step_mm": 10.000000000000002
+  }
+}

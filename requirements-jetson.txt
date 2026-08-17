@@ -1,0 +1,12 @@
+# Dependencies for the robot-side deployment only (NVIDIA Jetson, JetPack/Ubuntu 22.04).
+#
+# Deliberately minimal: the trained policy is exported to plain NumPy arrays and
+# its forward pass is reimplemented in ~15 lines, so no deep-learning framework
+# is required on the robot.  This removes the single largest source of embedded
+# setup risk and makes the deployment reproducible on any Python 3 machine.
+#
+# Both packages are already present on the stock Yahboom/myCobot Jetson image.
+
+numpy>=1.21
+pymycobot>=3.0.0
+pyserial>=3.5

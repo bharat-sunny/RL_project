@@ -1,0 +1,4550 @@
+{
+  "policy": "her_sparse_seed0",
+  "policy_path": "policies/her_sparse_seed0.npz",
+  "policy_metadata": {
+    "obs_keys": [
+      "achieved_goal",
+      "desired_goal",
+      "observation"
+    ],
+    "obs_dims": {
+      "achieved_goal": 3,
+      "desired_goal": 3,
+      "observation": 6
+    },
+    "n_hidden_layers": 2,
+    "hidden_sizes": [
+      64,
+      64
+    ],
+    "action_dim": 3,
+    "action_low": [
+      -1.0,
+      -1.0,
+      -1.0
+    ],
+    "action_high": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "activation": "relu",
+    "output_activation": "tanh",
+    "experiment": "her_sparse",
+    "seed": 0,
+    "checkpoint": "best_model",
+    "backend": "panda",
+    "reward_type": "sparse",
+    "domain_randomization": false,
+    "parity_check": {
+      "n_samples": 2000,
+      "max_abs_error": 3.410206673815086e-05,
+      "mean_abs_error": 4.6242665422351276e-07,
+      "max_error_as_displacement_um": 1.705103336907543,
+      "tolerance": 0.0001,
+      "passed": true
+    }
+  },
+  "n_trials": 27,
+  "success_rate": 0.8888888888888888,
+  "n_success": 24,
+  "final_error_mean_mm": 8.208024110218638,
+  "final_error_median_mm": 8.215229759416351,
+  "final_error_std_mm": 2.2855843370186633,
+  "steps_mean": 13.444444444444445,
+  "tolerance_mm": 10.000000000000002,
+  "duration_s": 227.6,
+  "trials": [
+    {
+      "goal_sim": [
+        -0.09,
+        -0.09,
+        0.06
+      ],
+      "goal_mm": [
+        187.0,
+        -18.0,
+        137.0
+      ],
+      "final_position_mm": [
+        187.2,
+        -20.4,
+        135.5
+      ],
+      "final_distance_mm": 2.8372521918222176,
+      "final_distance_sim": 0.014186260959111087,
+      "success": true,
+      "steps": 8,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.2,
+            -61.3,
+            218.6
+          ],
+          "distance_mm": 95.75223234995622,
+          "distance_sim": 0.478761161749781
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            213.8,
+            -56.1,
+            218.2
+          ],
+          "distance_mm": 93.61244575375649,
+          "distance_sim": 0.4680622287687824
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            202.2,
+            -47.6,
+            203.8
+          ],
+          "distance_mm": 74.62868081374613,
+          "distance_sim": 0.37314340406873064
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            198.3,
+            -41.1,
+            171.7
+          ],
+          "distance_mm": 43.19016091657914,
+          "distance_sim": 0.21595080458289567
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            195.7,
+            -35.6,
+            173.4
+          ],
+          "distance_mm": 41.35710338019336,
+          "distance_sim": 0.20678551690096675
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            192.4,
+            -30.4,
+            167.5
+          ],
+          "distance_mm": 33.36420237320233,
+          "distance_sim": 0.16682101186601164
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            185.5,
+            -26.9,
+            150.0
+          ],
+          "distance_mm": 15.825928092848143,
+          "distance_sim": 0.0791296404642407
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            190.7,
+            -22.4,
+            145.2
+          ],
+          "distance_mm": 10.014489502715538,
+          "distance_sim": 0.050072447513577686
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            187.7,
+            -20.5,
+            136.4
+          ],
+          "distance_mm": 2.664582518894841,
+          "distance_sim": 0.013322912594474205
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        -0.09,
+        0.15
+      ],
+      "goal_mm": [
+        187.0,
+        -18.0,
+        155.0
+      ],
+      "final_position_mm": [
+        187.0,
+        -23.8,
+        153.2
+      ],
+      "final_distance_mm": 6.072890580275597,
+      "final_distance_sim": 0.030364452901377983,
+      "success": true,
+      "steps": 7,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.3,
+            -62.0,
+            217.7
+          ],
+          "distance_mm": 80.66833331611605,
+          "distance_sim": 0.4033416665805802
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            213.6,
+            -56.8,
+            218.5
+          ],
+          "distance_mm": 79.02689415635666,
+          "distance_sim": 0.3951344707817833
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            201.7,
+            -47.7,
+            205.3
+          ],
+          "distance_mm": 60.23512264451697,
+          "distance_sim": 0.30117561322258485
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            189.7,
+            -42.5,
+            172.6
+          ],
+          "distance_mm": 30.28696089078598,
+          "distance_sim": 0.1514348044539299
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            192.5,
+            -37.0,
+            169.8
+          ],
+          "distance_mm": 24.704048251248217,
+          "distance_sim": 0.12352024125624107
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            193.2,
+            -31.4,
+            174.0
+          ],
+          "distance_mm": 24.062418831031927,
+          "distance_sim": 0.12031209415515962
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            182.8,
+            -27.2,
+            153.1
+          ],
+          "distance_mm": 10.290286682109485,
+          "distance_sim": 0.05145143341054743
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            187.0,
+            -23.8,
+            153.2
+          ],
+          "distance_mm": 6.072890580275597,
+          "distance_sim": 0.030364452901377983
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        -0.09,
+        0.24
+      ],
+      "goal_mm": [
+        187.0,
+        -18.0,
+        173.0
+      ],
+      "final_position_mm": [
+        186.9,
+        -26.1,
+        167.1
+      ],
+      "final_distance_mm": 10.021476937058734,
+      "final_distance_sim": 0.05010738468529367,
+      "success": true,
+      "steps": 6,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.5,
+            -61.4,
+            217.3
+          ],
+          "distance_mm": 67.05445548209306,
+          "distance_sim": 0.3352722774104653
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            213.5,
+            -56.8,
+            218.1
+          ],
+          "distance_mm": 65.12833484743794,
+          "distance_sim": 0.32564167423718965
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            201.5,
+            -47.8,
+            206.1
+          ],
+          "distance_mm": 46.83908624215463,
+          "distance_sim": 0.23419543121077316
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            185.0,
+            -43.0,
+            179.8
+          ],
+          "distance_mm": 25.985380505199455,
+          "distance_sim": 0.12992690252599726
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            183.1,
+            -37.8,
+            168.1
+          ],
+          "distance_mm": 20.766800427605602,
+          "distance_sim": 0.103834002138028
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            186.0,
+            -32.4,
+            168.5
+          ],
+          "distance_mm": 15.11985449665439,
+          "distance_sim": 0.07559927248327195
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            186.9,
+            -25.8,
+            167.1
+          ],
+          "distance_mm": 9.780593029055042,
+          "distance_sim": 0.04890296514527521
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        0.0,
+        0.06
+      ],
+      "goal_mm": [
+        187.0,
+        0.0,
+        137.0
+      ],
+      "final_position_mm": [
+        185.9,
+        -3.8,
+        134.7
+      ],
+      "final_distance_mm": 4.576024475459026,
+      "final_distance_sim": 0.02288012237729513,
+      "success": true,
+      "steps": 9,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.5,
+            -61.4,
+            217.5
+          ],
+          "distance_mm": 104.40526806631934,
+          "distance_sim": 0.5220263403315967
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            214.0,
+            -56.5,
+            217.7
+          ],
+          "distance_mm": 102.1456802806658,
+          "distance_sim": 0.510728401403329
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            203.6,
+            -47.6,
+            201.5
+          ],
+          "distance_mm": 81.86311745835239,
+          "distance_sim": 0.40931558729176193
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            200.9,
+            -40.6,
+            167.3
+          ],
+          "distance_mm": 52.532466151895065,
+          "distance_sim": 0.2626623307594753
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            202.3,
+            -34.1,
+            182.9
+          ],
+          "distance_mm": 59.19214474911347,
+          "distance_sim": 0.2959607237455673
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            191.8,
+            -27.3,
+            168.7
+          ],
+          "distance_mm": 42.10961885365385,
+          "distance_sim": 0.21054809426826923
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            189.0,
+            -20.3,
+            161.6
+          ],
+          "distance_mm": 31.957002362549584,
+          "distance_sim": 0.15978501181274793
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            181.8,
+            -13.5,
+            145.3
+          ],
+          "distance_mm": 16.67872896835967,
+          "distance_sim": 0.08339364484179836
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            187.5,
+            -7.8,
+            143.5
+          ],
+          "distance_mm": 10.165628362280415,
+          "distance_sim": 0.05082814181140207
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            185.9,
+            -3.5,
+            134.9
+          ],
+          "distance_mm": 4.227292277569646,
+          "distance_sim": 0.021136461387848228
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        0.0,
+        0.15
+      ],
+      "goal_mm": [
+        187.0,
+        0.0,
+        155.0
+      ],
+      "final_position_mm": [
+        185.8,
+        -5.8,
+        152.2
+      ],
+      "final_distance_mm": 6.551335741663684,
+      "final_distance_sim": 0.032756678708318415,
+      "success": true,
+      "steps": 9,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.2,
+            -61.7,
+            217.8
+          ],
+          "distance_mm": 91.57384997912887,
+          "distance_sim": 0.45786924989564426
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            213.8,
+            -56.5,
+            218.2
+          ],
+          "distance_mm": 88.9085485203757,
+          "distance_sim": 0.4445427426018785
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            202.1,
+            -47.7,
+            205.1
+          ],
+          "distance_mm": 70.80473148031845,
+          "distance_sim": 0.35402365740159225
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            195.8,
+            -41.8,
+            170.0
+          ],
+          "distance_mm": 45.27339174393718,
+          "distance_sim": 0.22636695871968593
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            191.8,
+            -36.5,
+            173.4
+          ],
+          "distance_mm": 41.15640897843251,
+          "distance_sim": 0.20578204489216254
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            187.9,
+            -30.4,
+            161.1
+          ],
+          "distance_mm": 31.019026419280152,
+          "distance_sim": 0.15509513209640075
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            188.1,
+            -24.2,
+            157.7
+          ],
+          "distance_mm": 24.374987179483806,
+          "distance_sim": 0.12187493589741903
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            185.7,
+            -17.4,
+            154.9
+          ],
+          "distance_mm": 17.448782192462605,
+          "distance_sim": 0.08724391096231301
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            186.0,
+            -11.5,
+            154.1
+          ],
+          "distance_mm": 11.578428218026833,
+          "distance_sim": 0.05789214109013416
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            185.8,
+            -5.8,
+            152.2
+          ],
+          "distance_mm": 6.551335741663684,
+          "distance_sim": 0.032756678708318415
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        0.0,
+        0.24
+      ],
+      "goal_mm": [
+        187.0,
+        0.0,
+        173.0
+      ],
+      "final_position_mm": [
+        187.0,
+        -4.6,
+        166.4
+      ],
+      "final_distance_mm": 8.044874144447501,
+      "final_distance_sim": 0.04022437072223751,
+      "success": true,
+      "steps": 9,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.2,
+            -62.0,
+            217.8
+          ],
+          "distance_mm": 80.53620303937852,
+          "distance_sim": 0.40268101519689253
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            214.1,
+            -56.5,
+            217.6
+          ],
+          "distance_mm": 76.91436796854018,
+          "distance_sim": 0.3845718398427009
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            203.6,
+            -47.3,
+            202.4
+          ],
+          "distance_mm": 58.11376773192391,
+          "distance_sim": 0.2905688386596195
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            187.8,
+            -42.1,
+            176.1
+          ],
+          "distance_mm": 42.221558474314996,
+          "distance_sim": 0.21110779237157495
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            187.6,
+            -36.3,
+            169.7
+          ],
+          "distance_mm": 36.45462933565503,
+          "distance_sim": 0.18227314667827513
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            187.4,
+            -29.3,
+            172.5
+          ],
+          "distance_mm": 29.30699575186785,
+          "distance_sim": 0.14653497875933924
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            185.8,
+            -21.9,
+            165.4
+          ],
+          "distance_mm": 23.212281232140885,
+          "distance_sim": 0.11606140616070441
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            188.1,
+            -15.4,
+            166.7
+          ],
+          "distance_mm": 16.675131183891782,
+          "distance_sim": 0.0833756559194589
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            186.9,
+            -8.6,
+            166.4
+          ],
+          "distance_mm": 10.841125402835258,
+          "distance_sim": 0.05420562701417629
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            187.0,
+            -4.6,
+            166.4
+          ],
+          "distance_mm": 8.044874144447501,
+          "distance_sim": 0.04022437072223751
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        0.09,
+        0.06
+      ],
+      "goal_mm": [
+        187.0,
+        18.0,
+        137.0
+      ],
+      "final_position_mm": [
+        186.8,
+        14.6,
+        131.9
+      ],
+      "final_distance_mm": 6.132699242584782,
+      "final_distance_sim": 0.03066349621292391,
+      "success": true,
+      "steps": 12,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.3,
+            -62.0,
+            217.7
+          ],
+          "distance_mm": 116.41554878966986,
+          "distance_sim": 0.5820777439483492
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            215.0,
+            -55.8,
+            216.3
+          ],
+          "distance_mm": 111.88802438152173,
+          "distance_sim": 0.5594401219076086
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            207.1,
+            -47.0,
+            194.0
+          ],
+          "distance_mm": 88.7581545549478,
+          "distance_sim": 0.4437907727747389
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            202.9,
+            -40.0,
+            167.9
+          ],
+          "distance_mm": 67.6137559968384,
+          "distance_sim": 0.338068779984192
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            199.6,
+            -33.9,
+            175.0
+          ],
+          "distance_mm": 65.54670090858883,
+          "distance_sim": 0.32773350454294414
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            191.0,
+            -26.9,
+            161.7
+          ],
+          "distance_mm": 51.401361849663076,
+          "distance_sim": 0.25700680924831537
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            188.0,
+            -19.9,
+            149.8
+          ],
+          "distance_mm": 40.0156219494337,
+          "distance_sim": 0.2000781097471685
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            187.1,
+            -13.1,
+            145.4
+          ],
+          "distance_mm": 32.214592966542355,
+          "distance_sim": 0.16107296483271175
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            185.6,
+            -7.0,
+            135.1
+          ],
+          "distance_mm": 25.11115290065353,
+          "distance_sim": 0.12555576450326764
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            187.3,
+            -1.3,
+            134.9
+          ],
+          "distance_mm": 19.416230324138617,
+          "distance_sim": 0.09708115162069308
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            184.6,
+            4.5,
+            130.4
+          ],
+          "distance_mm": 15.217424223566875,
+          "distance_sim": 0.07608712111783437
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            187.1,
+            9.1,
+            132.1
+          ],
+          "distance_mm": 10.160216533125663,
+          "distance_sim": 0.050801082665628314
+        },
+        {
+          "step": 12,
+          "position_mm": [
+            186.8,
+            14.6,
+            131.9
+          ],
+          "distance_mm": 6.132699242584782,
+          "distance_sim": 0.03066349621292391
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        0.09,
+        0.15
+      ],
+      "goal_mm": [
+        187.0,
+        18.0,
+        155.0
+      ],
+      "final_position_mm": [
+        187.1,
+        10.2,
+        151.4
+      ],
+      "final_distance_mm": 8.59127464349732,
+      "final_distance_sim": 0.04295637321748659,
+      "success": true,
+      "steps": 11,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.3,
+            -61.7,
+            218.1
+          ],
+          "distance_mm": 104.75585902468653,
+          "distance_sim": 0.5237792951234326
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            215.3,
+            -55.8,
+            216.0
+          ],
+          "distance_mm": 99.84152442746455,
+          "distance_sim": 0.4992076221373227
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            208.8,
+            -46.2,
+            189.5
+          ],
+          "distance_mm": 76.0731884437612,
+          "distance_sim": 0.38036594221880593
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            198.7,
+            -40.8,
+            170.9
+          ],
+          "distance_mm": 62.02531741152154,
+          "distance_sim": 0.3101265870576077
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            193.6,
+            -34.5,
+            176.1
+          ],
+          "distance_mm": 56.965077020925726,
+          "distance_sim": 0.2848253851046286
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            190.5,
+            -27.3,
+            161.5
+          ],
+          "distance_mm": 45.89760342327255,
+          "distance_sim": 0.22948801711636274
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            189.9,
+            -20.8,
+            157.4
+          ],
+          "distance_mm": 38.98217541389911,
+          "distance_sim": 0.19491087706949553
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            186.1,
+            -13.4,
+            154.8
+          ],
+          "distance_mm": 31.413532115952833,
+          "distance_sim": 0.15706766057976415
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            184.1,
+            -6.9,
+            152.5
+          ],
+          "distance_mm": 25.19265766051689,
+          "distance_sim": 0.12596328830258444
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            184.7,
+            -0.7,
+            153.1
+          ],
+          "distance_mm": 18.936472744415738,
+          "distance_sim": 0.09468236372207868
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            186.1,
+            5.1,
+            150.5
+          ],
+          "distance_mm": 13.691968448692831,
+          "distance_sim": 0.06845984224346416
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            187.1,
+            10.2,
+            151.4
+          ],
+          "distance_mm": 8.59127464349732,
+          "distance_sim": 0.04295637321748659
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        -0.09,
+        0.09,
+        0.24
+      ],
+      "goal_mm": [
+        187.0,
+        18.0,
+        173.0
+      ],
+      "final_position_mm": [
+        187.2,
+        13.8,
+        166.8
+      ],
+      "final_distance_mm": 7.491328320131206,
+      "final_distance_sim": 0.03745664160065603,
+      "success": true,
+      "steps": 12,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.5,
+            -61.4,
+            217.7
+          ],
+          "distance_mm": 94.61870850946971,
+          "distance_sim": 0.47309354254734853
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            215.3,
+            -55.4,
+            215.9
+          ],
+          "distance_mm": 89.60390616485422,
+          "distance_sim": 0.4480195308242711
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            209.5,
+            -46.2,
+            187.0
+          ],
+          "distance_mm": 69.45422953283696,
+          "distance_sim": 0.34727114766418476
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            195.2,
+            -41.3,
+            171.0
+          ],
+          "distance_mm": 59.89766272568571,
+          "distance_sim": 0.29948831362842854
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            190.8,
+            -35.2,
+            169.2
+          ],
+          "distance_mm": 53.4707396619871,
+          "distance_sim": 0.2673536983099355
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            185.4,
+            -27.8,
+            171.5
+          ],
+          "distance_mm": 45.85248084891373,
+          "distance_sim": 0.22926240424456865
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            184.9,
+            -20.4,
+            167.3
+          ],
+          "distance_mm": 38.87749991961931,
+          "distance_sim": 0.19438749959809656
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            185.5,
+            -13.6,
+            167.3
+          ],
+          "distance_mm": 32.14498405661448,
+          "distance_sim": 0.16072492028307242
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            185.9,
+            -6.9,
+            167.3
+          ],
+          "distance_mm": 25.567753127719296,
+          "distance_sim": 0.12783876563859647
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            186.0,
+            -0.4,
+            167.3
+          ],
+          "distance_mm": 19.28859766805249,
+          "distance_sim": 0.09644298834026244
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            185.9,
+            5.3,
+            167.3
+          ],
+          "distance_mm": 13.96388198174132,
+          "distance_sim": 0.0698194099087066
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            185.9,
+            10.3,
+            166.2
+          ],
+          "distance_mm": 10.331505214633546,
+          "distance_sim": 0.05165752607316773
+        },
+        {
+          "step": 12,
+          "position_mm": [
+            187.2,
+            13.8,
+            166.8
+          ],
+          "distance_mm": 7.491328320131206,
+          "distance_sim": 0.03745664160065603
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        -0.09,
+        0.06
+      ],
+      "goal_mm": [
+        205.0,
+        -18.0,
+        137.0
+      ],
+      "final_position_mm": [
+        207.6,
+        -23.0,
+        141.3
+      ],
+      "final_distance_mm": 7.088723439378918,
+      "final_distance_sim": 0.03544361719689459,
+      "success": true,
+      "steps": 7,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.3,
+            -62.0,
+            217.7
+          ],
+          "distance_mm": 92.20509747297054,
+          "distance_sim": 0.46102548736485266
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            214.3,
+            -56.4,
+            217.4
+          ],
+          "distance_mm": 89.5835364338783,
+          "distance_sim": 0.4479176821693915
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            205.0,
+            -46.9,
+            199.3
+          ],
+          "distance_mm": 68.67677919064056,
+          "distance_sim": 0.34338389595320284
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            202.2,
+            -40.4,
+            163.1
+          ],
+          "distance_mm": 34.50811498763733,
+          "distance_sim": 0.1725405749381866
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            214.4,
+            -32.2,
+            175.8
+          ],
+          "distance_mm": 42.37263267723639,
+          "distance_sim": 0.21186316338618194
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            205.4,
+            -28.4,
+            160.8
+          ],
+          "distance_mm": 25.976142900746456,
+          "distance_sim": 0.1298807145037323
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            204.6,
+            -23.0,
+            146.5
+          ],
+          "distance_mm": 10.742904635153378,
+          "distance_sim": 0.053714523175766894
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            207.5,
+            -23.0,
+            141.1
+          ],
+          "distance_mm": 6.932532004974803,
+          "distance_sim": 0.03466266002487401
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        -0.09,
+        0.15
+      ],
+      "goal_mm": [
+        205.0,
+        -18.0,
+        155.0
+      ],
+      "final_position_mm": [
+        209.2,
+        -23.6,
+        159.3
+      ],
+      "final_distance_mm": 8.215229759416351,
+      "final_distance_sim": 0.04107614879708175,
+      "success": true,
+      "steps": 6,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.4,
+            -61.4,
+            218.3
+          ],
+          "distance_mm": 77.10518789290381,
+          "distance_sim": 0.385525939464519
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            215.1,
+            -55.8,
+            216.6
+          ],
+          "distance_mm": 72.97540681626927,
+          "distance_sim": 0.3648770340813463
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            208.0,
+            -46.3,
+            192.5
+          ],
+          "distance_mm": 47.07589616778421,
+          "distance_sim": 0.23537948083892102
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            206.4,
+            -39.9,
+            167.5
+          ],
+          "distance_mm": 25.25509849515539,
+          "distance_sim": 0.12627549247577693
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            213.9,
+            -32.0,
+            171.7
+          ],
+          "distance_mm": 23.539328792469846,
+          "distance_sim": 0.11769664396234922
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            209.3,
+            -26.4,
+            159.8
+          ],
+          "distance_mm": 10.58725649070618,
+          "distance_sim": 0.052936282453530895
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            208.6,
+            -24.3,
+            157.8
+          ],
+          "distance_mm": 7.777531742140309,
+          "distance_sim": 0.038887658710701545
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        -0.09,
+        0.24
+      ],
+      "goal_mm": [
+        205.0,
+        -18.0,
+        173.0
+      ],
+      "final_position_mm": [
+        206.1,
+        -24.8,
+        173.0
+      ],
+      "final_distance_mm": 6.888396039717807,
+      "final_distance_sim": 0.03444198019858903,
+      "success": true,
+      "steps": 5,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.2,
+            -62.0,
+            218.1
+          ],
+          "distance_mm": 63.4180573653908,
+          "distance_sim": 0.317090286826954
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.6,
+            -54.7,
+            213.7
+          ],
+          "distance_mm": 56.01731875054355,
+          "distance_sim": 0.28008659375271777
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            212.1,
+            -45.0,
+            182.5
+          ],
+          "distance_mm": 29.48999830450995,
+          "distance_sim": 0.14744999152254973
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            212.0,
+            -38.3,
+            171.0
+          ],
+          "distance_mm": 21.565945376913103,
+          "distance_sim": 0.1078297268845655
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            214.3,
+            -31.9,
+            171.2
+          ],
+          "distance_mm": 16.82082043183388,
+          "distance_sim": 0.0841041021591694
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            207.1,
+            -24.6,
+            174.7
+          ],
+          "distance_mm": 7.131619731870171,
+          "distance_sim": 0.03565809865935085
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        0.0,
+        0.06
+      ],
+      "goal_mm": [
+        205.0,
+        0.0,
+        137.0
+      ],
+      "final_position_mm": [
+        209.7,
+        -3.8,
+        140.5
+      ],
+      "final_distance_mm": 6.984268036093683,
+      "final_distance_sim": 0.03492134018046841,
+      "success": true,
+      "steps": 9,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.3,
+            -62.0,
+            217.7
+          ],
+          "distance_mm": 102.02832939924087,
+          "distance_sim": 0.5101416469962043
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            215.7,
+            -55.4,
+            215.2
+          ],
+          "distance_mm": 96.43075235628933,
+          "distance_sim": 0.4821537617814466
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            210.7,
+            -45.7,
+            184.2
+          ],
+          "distance_mm": 65.94558362771535,
+          "distance_sim": 0.32972791813857677
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            213.0,
+            -38.8,
+            170.4
+          ],
+          "distance_mm": 51.81698563212646,
+          "distance_sim": 0.2590849281606323
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            220.0,
+            -30.7,
+            167.9
+          ],
+          "distance_mm": 46.06842736625595,
+          "distance_sim": 0.23034213683127974
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            213.4,
+            -24.7,
+            148.6
+          ],
+          "distance_mm": 28.551882599926756,
+          "distance_sim": 0.14275941299963377
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            207.4,
+            -18.6,
+            150.2
+          ],
+          "distance_mm": 22.93381782433967,
+          "distance_sim": 0.11466908912169833
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            203.1,
+            -11.6,
+            140.4
+          ],
+          "distance_mm": 12.236421045387415,
+          "distance_sim": 0.061182105226937074
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            202.1,
+            -9.1,
+            129.7
+          ],
+          "distance_mm": 12.021231218140683,
+          "distance_sim": 0.06010615609070341
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            211.2,
+            -3.3,
+            143.5
+          ],
+          "distance_mm": 9.569743988216189,
+          "distance_sim": 0.04784871994108093
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        0.0,
+        0.15
+      ],
+      "goal_mm": [
+        205.0,
+        0.0,
+        155.0
+      ],
+      "final_position_mm": [
+        203.6,
+        -6.2,
+        151.4
+      ],
+      "final_distance_mm": 7.304792947099867,
+      "final_distance_sim": 0.036523964735499334,
+      "success": true,
+      "steps": 8,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            211.9,
+            -62.0,
+            218.9
+          ],
+          "distance_mm": 89.30184768525228,
+          "distance_sim": 0.44650923842626145
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.3,
+            -55.1,
+            214.3
+          ],
+          "distance_mm": 81.73242930440769,
+          "distance_sim": 0.4086621465220384
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            214.7,
+            -45.4,
+            179.3
+          ],
+          "distance_mm": 52.39980915995784,
+          "distance_sim": 0.26199904579978917
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            211.1,
+            -39.0,
+            173.6
+          ],
+          "distance_mm": 43.63679639936919,
+          "distance_sim": 0.21818398199684594
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            211.9,
+            -31.6,
+            172.9
+          ],
+          "distance_mm": 36.96728283225588,
+          "distance_sim": 0.1848364141612794
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            207.4,
+            -24.3,
+            156.1
+          ],
+          "distance_mm": 24.442994906516677,
+          "distance_sim": 0.12221497453258337
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            208.9,
+            -18.3,
+            157.2
+          ],
+          "distance_mm": 18.839851379456263,
+          "distance_sim": 0.0941992568972813
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            205.7,
+            -11.0,
+            154.2
+          ],
+          "distance_mm": 11.051244273836316,
+          "distance_sim": 0.05525622136918158
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            203.4,
+            -6.3,
+            150.9
+          ],
+          "distance_mm": 7.685050422736335,
+          "distance_sim": 0.038425252113681675
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        0.0,
+        0.24
+      ],
+      "goal_mm": [
+        205.0,
+        0.0,
+        173.0
+      ],
+      "final_position_mm": [
+        205.4,
+        -4.4,
+        165.4
+      ],
+      "final_distance_mm": 8.790904390334362,
+      "final_distance_sim": 0.0439545219516718,
+      "success": true,
+      "steps": 9,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.4,
+            -61.4,
+            218.1
+          ],
+          "distance_mm": 76.5423412236652,
+          "distance_sim": 0.382711706118326
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            217.3,
+            -54.4,
+            212.5
+          ],
+          "distance_mm": 68.34398290998266,
+          "distance_sim": 0.34171991454991324
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            218.2,
+            -42.8,
+            176.3
+          ],
+          "distance_mm": 44.91068915080239,
+          "distance_sim": 0.22455344575401193
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            212.6,
+            -37.0,
+            180.1
+          ],
+          "distance_mm": 38.43396935004241,
+          "distance_sim": 0.19216984675021204
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            205.3,
+            -29.9,
+            170.3
+          ],
+          "distance_mm": 30.023157728660056,
+          "distance_sim": 0.15011578864330027
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            206.8,
+            -23.1,
+            171.8
+          ],
+          "distance_mm": 23.201077561182373,
+          "distance_sim": 0.11600538780591185
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            204.0,
+            -16.3,
+            167.5
+          ],
+          "distance_mm": 17.231947075127643,
+          "distance_sim": 0.0861597353756382
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            205.0,
+            -10.8,
+            169.1
+          ],
+          "distance_mm": 11.482595525402784,
+          "distance_sim": 0.05741297762701392
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            204.0,
+            -5.2,
+            164.5
+          ],
+          "distance_mm": 10.014489502715554,
+          "distance_sim": 0.05007244751357777
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            205.4,
+            -4.1,
+            165.4
+          ],
+          "distance_mm": 8.644651525654458,
+          "distance_sim": 0.04322325762827229
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        0.09,
+        0.06
+      ],
+      "goal_mm": [
+        205.0,
+        18.0,
+        137.0
+      ],
+      "final_position_mm": [
+        204.7,
+        11.8,
+        132.7
+      ],
+      "final_distance_mm": 7.5511588514611505,
+      "final_distance_sim": 0.03775579425730575,
+      "success": true,
+      "steps": 11,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.3,
+            -62.0,
+            217.7
+          ],
+          "distance_mm": 113.86737899855251,
+          "distance_sim": 0.5693368949927625
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            217.9,
+            -54.0,
+            211.3
+          ],
+          "distance_mm": 104.26360822453825,
+          "distance_sim": 0.5213180411226912
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            220.2,
+            -42.3,
+            175.1
+          ],
+          "distance_mm": 72.92969216992486,
+          "distance_sim": 0.36464846084962427
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            217.2,
+            -36.0,
+            178.8
+          ],
+          "distance_mm": 69.3691574116336,
+          "distance_sim": 0.34684578705816793
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            214.9,
+            -29.2,
+            165.7
+          ],
+          "distance_mm": 56.12076264627913,
+          "distance_sim": 0.28060381323139566
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            213.9,
+            -22.7,
+            153.5
+          ],
+          "distance_mm": 44.81015509903977,
+          "distance_sim": 0.22405077549519883
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            206.8,
+            -16.0,
+            153.9
+          ],
+          "distance_mm": 38.0111825651347,
+          "distance_sim": 0.1900559128256735
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            203.9,
+            -9.2,
+            140.5
+          ],
+          "distance_mm": 27.446311227558436,
+          "distance_sim": 0.13723155613779217
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            206.4,
+            -4.2,
+            139.1
+          ],
+          "distance_mm": 22.343007854807734,
+          "distance_sim": 0.11171503927403865
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            203.6,
+            2.1,
+            132.6
+          ],
+          "distance_mm": 16.556871685194643,
+          "distance_sim": 0.08278435842597322
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            205.4,
+            6.6,
+            133.7
+          ],
+          "distance_mm": 11.874763155532833,
+          "distance_sim": 0.05937381577766416
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            204.7,
+            11.8,
+            132.7
+          ],
+          "distance_mm": 7.5511588514611505,
+          "distance_sim": 0.03775579425730575
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        0.09,
+        0.15
+      ],
+      "goal_mm": [
+        205.0,
+        18.0,
+        155.0
+      ],
+      "final_position_mm": [
+        203.8,
+        11.5,
+        148.8
+      ],
+      "final_distance_mm": 9.06256034462667,
+      "final_distance_sim": 0.045312801723133345,
+      "success": true,
+      "steps": 11,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            211.9,
+            -62.0,
+            218.7
+          ],
+          "distance_mm": 102.49536574889618,
+          "distance_sim": 0.5124768287444809
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.9,
+            -54.7,
+            213.1
+          ],
+          "distance_mm": 93.82169258758871,
+          "distance_sim": 0.46910846293794356
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            218.0,
+            -43.8,
+            175.2
+          ],
+          "distance_mm": 66.30444932280184,
+          "distance_sim": 0.3315222466140092
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            212.9,
+            -37.9,
+            179.9
+          ],
+          "distance_mm": 61.70275520590633,
+          "distance_sim": 0.3085137760295316
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            212.5,
+            -31.9,
+            165.3
+          ],
+          "distance_mm": 51.50097086463517,
+          "distance_sim": 0.2575048543231758
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            208.9,
+            -24.9,
+            162.6
+          ],
+          "distance_mm": 43.742199304561716,
+          "distance_sim": 0.21871099652280857
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            205.6,
+            -17.2,
+            153.8
+          ],
+          "distance_mm": 35.225558902592304,
+          "distance_sim": 0.1761277945129615
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            204.9,
+            -10.6,
+            151.2
+          ],
+          "distance_mm": 28.85151642461796,
+          "distance_sim": 0.14425758212308978
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            203.7,
+            -4.4,
+            148.2
+          ],
+          "distance_mm": 23.445468645348086,
+          "distance_sim": 0.11722734322674042
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            204.0,
+            1.0,
+            148.7
+          ],
+          "distance_mm": 18.157367650626014,
+          "distance_sim": 0.09078683825313007
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            204.0,
+            6.7,
+            148.8
+          ],
+          "distance_mm": 12.927876855849139,
+          "distance_sim": 0.06463938427924569
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            203.8,
+            11.5,
+            148.8
+          ],
+          "distance_mm": 9.06256034462667,
+          "distance_sim": 0.045312801723133345
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.0,
+        0.09,
+        0.24
+      ],
+      "goal_mm": [
+        205.0,
+        18.0,
+        173.0
+      ],
+      "final_position_mm": [
+        203.8,
+        11.5,
+        167.3
+      ],
+      "final_distance_mm": 8.72811548961171,
+      "final_distance_sim": 0.04364057744805855,
+      "success": true,
+      "steps": 11,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.0,
+            -62.0,
+            218.6
+          ],
+          "distance_mm": 92.34912019071974,
+          "distance_sim": 0.4617456009535987
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.6,
+            -54.7,
+            213.9
+          ],
+          "distance_mm": 84.2179315822943,
+          "distance_sim": 0.42108965791147146
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            216.6,
+            -44.2,
+            176.6
+          ],
+          "distance_mm": 63.374758382182414,
+          "distance_sim": 0.3168737919109121
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            209.9,
+            -39.2,
+            177.1
+          ],
+          "distance_mm": 57.555712140499146,
+          "distance_sim": 0.28777856070249574
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            203.2,
+            -33.6,
+            171.0
+          ],
+          "distance_mm": 51.670107412313364,
+          "distance_sim": 0.2583505370615668
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            201.3,
+            -27.0,
+            168.4
+          ],
+          "distance_mm": 45.385570394124166,
+          "distance_sim": 0.2269278519706208
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            202.1,
+            -19.9,
+            166.8
+          ],
+          "distance_mm": 38.51311464942819,
+          "distance_sim": 0.1925655732471409
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            203.2,
+            -12.5,
+            167.6
+          ],
+          "distance_mm": 31.02660148968946,
+          "distance_sim": 0.1551330074484473
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            203.5,
+            -6.0,
+            167.6
+          ],
+          "distance_mm": 24.645689278249048,
+          "distance_sim": 0.12322844639124522
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            203.5,
+            0.0,
+            167.5
+          ],
+          "distance_mm": 18.881207588499205,
+          "distance_sim": 0.09440603794249602
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            204.0,
+            6.1,
+            167.3
+          ],
+          "distance_mm": 13.232535660258012,
+          "distance_sim": 0.06616267830129005
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            203.8,
+            11.5,
+            167.3
+          ],
+          "distance_mm": 8.72811548961171,
+          "distance_sim": 0.04364057744805855
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        -0.09,
+        0.06
+      ],
+      "goal_mm": [
+        223.0,
+        -18.0,
+        137.0
+      ],
+      "final_position_mm": [
+        224.0,
+        -24.7,
+        142.9
+      ],
+      "final_distance_mm": 8.983317872590288,
+      "final_distance_sim": 0.04491658936295143,
+      "success": true,
+      "steps": 6,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.3,
+            -62.0,
+            218.0
+          ],
+          "distance_mm": 92.79811420497724,
+          "distance_sim": 0.4639905710248862
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            215.2,
+            -55.8,
+            216.1
+          ],
+          "distance_mm": 88.01414659019309,
+          "distance_sim": 0.44007073295096544
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            210.1,
+            -46.4,
+            185.2
+          ],
+          "distance_mm": 57.4126292726609,
+          "distance_sim": 0.2870631463633045
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            212.3,
+            -38.9,
+            167.7
+          ],
+          "distance_mm": 38.64957955786841,
+          "distance_sim": 0.193247897789342
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            221.1,
+            -31.2,
+            163.1
+          ],
+          "distance_mm": 29.309725348423168,
+          "distance_sim": 0.14654862674211583
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            223.3,
+            -27.5,
+            146.4
+          ],
+          "distance_mm": 13.367871932360815,
+          "distance_sim": 0.06683935966180407
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            224.0,
+            -24.7,
+            142.9
+          ],
+          "distance_mm": 8.983317872590288,
+          "distance_sim": 0.04491658936295143
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        -0.09,
+        0.15
+      ],
+      "goal_mm": [
+        223.0,
+        -18.0,
+        155.0
+      ],
+      "final_position_mm": [
+        216.8,
+        -24.7,
+        151.8
+      ],
+      "final_distance_mm": 9.673158739522462,
+      "final_distance_sim": 0.048365793697612305,
+      "success": true,
+      "steps": 5,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.9,
+            -61.4,
+            217.0
+          ],
+          "distance_mm": 76.35162080794356,
+          "distance_sim": 0.3817581040397177
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.6,
+            -54.4,
+            214.2
+          ],
+          "distance_mm": 69.78939747554782,
+          "distance_sim": 0.34894698737773905
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            215.5,
+            -44.0,
+            179.1
+          ],
+          "distance_mm": 36.23616977551573,
+          "distance_sim": 0.18118084887757863
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            222.5,
+            -36.7,
+            174.9
+          ],
+          "distance_mm": 27.31208523712534,
+          "distance_sim": 0.1365604261856267
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            223.8,
+            -30.5,
+            168.7
+          ],
+          "distance_mm": 18.562866158004795,
+          "distance_sim": 0.09281433079002396
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            217.2,
+            -24.6,
+            152.8
+          ],
+          "distance_mm": 9.057593499379406,
+          "distance_sim": 0.04528796749689703
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        -0.09,
+        0.24
+      ],
+      "goal_mm": [
+        223.0,
+        -18.0,
+        173.0
+      ],
+      "final_position_mm": [
+        223.9,
+        -21.0,
+        162.1
+      ],
+      "final_distance_mm": 11.341075786714422,
+      "final_distance_sim": 0.0567053789335721,
+      "success": false,
+      "steps": 50,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.5,
+            -61.4,
+            218.0
+          ],
+          "distance_mm": 63.394084897567524,
+          "distance_sim": 0.31697042448783763
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            218.1,
+            -53.7,
+            210.9
+          ],
+          "distance_mm": 52.29636698662729,
+          "distance_sim": 0.2614818349331364
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            219.1,
+            -42.4,
+            176.6
+          ],
+          "distance_mm": 24.970582692440317,
+          "distance_sim": 0.12485291346220159
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            225.9,
+            -34.6,
+            175.2
+          ],
+          "distance_mm": 16.994410845922253,
+          "distance_sim": 0.08497205422961127
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            225.0,
+            -27.6,
+            176.1
+          ],
+          "distance_mm": 10.284454287904634,
+          "distance_sim": 0.051422271439523166
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            220.4,
+            -24.4,
+            163.9
+          ],
+          "distance_mm": 11.424972647669659,
+          "distance_sim": 0.0571248632383483
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            226.1,
+            -23.0,
+            163.8
+          ],
+          "distance_mm": 10.920164833920763,
+          "distance_sim": 0.054600824169603816
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            225.6,
+            -22.4,
+            161.8
+          ],
+          "distance_mm": 12.310970717209901,
+          "distance_sim": 0.06155485358604951
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            226.3,
+            -22.2,
+            162.6
+          ],
+          "distance_mm": 11.69144986731758,
+          "distance_sim": 0.0584572493365879
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            223.2,
+            -20.8,
+            160.7
+          ],
+          "distance_mm": 12.616259350536525,
+          "distance_sim": 0.06308129675268262
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            223.5,
+            -21.1,
+            161.7
+          ],
+          "distance_mm": 11.72817121293854,
+          "distance_sim": 0.058640856064692694
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 12,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 13,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 14,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 15,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 16,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 17,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 18,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 19,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 20,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 21,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 22,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 23,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 24,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 25,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 26,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 27,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 28,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 29,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 30,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 31,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 32,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 33,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 34,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 35,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 36,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 37,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 38,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 39,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 40,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 41,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 42,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 43,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 44,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 45,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 46,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 47,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 48,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        },
+        {
+          "step": 49,
+          "position_mm": [
+            223.9,
+            -21.0,
+            162.1
+          ],
+          "distance_mm": 11.341075786714422,
+          "distance_sim": 0.0567053789335721
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        0.0,
+        0.06
+      ],
+      "goal_mm": [
+        223.0,
+        0.0,
+        137.0
+      ],
+      "final_position_mm": [
+        222.0,
+        -6.9,
+        134.6
+      ],
+      "final_distance_mm": 7.373601562330314,
+      "final_distance_sim": 0.03686800781165157,
+      "success": true,
+      "steps": 8,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            211.9,
+            -62.0,
+            218.9
+          ],
+          "distance_mm": 103.3190205141338,
+          "distance_sim": 0.516595102570669
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.0,
+            -54.4,
+            214.2
+          ],
+          "distance_mm": 94.70058077963407,
+          "distance_sim": 0.47350290389817035
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            216.2,
+            -44.0,
+            175.0
+          ],
+          "distance_mm": 58.5340926298512,
+          "distance_sim": 0.292670463149256
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            221.5,
+            -37.5,
+            175.3
+          ],
+          "distance_mm": 53.622663119244656,
+          "distance_sim": 0.26811331559622326
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            226.6,
+            -30.4,
+            161.7
+          ],
+          "distance_mm": 39.33459037539351,
+          "distance_sim": 0.19667295187696754
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            227.0,
+            -23.8,
+            149.4
+          ],
+          "distance_mm": 27.13300573102804,
+          "distance_sim": 0.13566502865514019
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            224.5,
+            -17.2,
+            144.9
+          ],
+          "distance_mm": 18.98683754604753,
+          "distance_sim": 0.09493418773023764
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            220.9,
+            -10.9,
+            136.3
+          ],
+          "distance_mm": 11.122499719037982,
+          "distance_sim": 0.05561249859518991
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            221.5,
+            -7.3,
+            133.8
+          ],
+          "distance_mm": 8.110487038396641,
+          "distance_sim": 0.040552435191983205
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        0.0,
+        0.15
+      ],
+      "goal_mm": [
+        223.0,
+        0.0,
+        155.0
+      ],
+      "final_position_mm": [
+        222.6,
+        -3.7,
+        147.1
+      ],
+      "final_distance_mm": 8.732697177848326,
+      "final_distance_sim": 0.04366348588924163,
+      "success": true,
+      "steps": 9,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            211.9,
+            -62.0,
+            218.9
+          ],
+          "distance_mm": 89.72413276259627,
+          "distance_sim": 0.4486206638129813
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.8,
+            -53.7,
+            213.0
+          ],
+          "distance_mm": 79.28511840187919,
+          "distance_sim": 0.39642559200939587
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            217.9,
+            -44.1,
+            174.5
+          ],
+          "distance_mm": 48.487833525535045,
+          "distance_sim": 0.24243916762767523
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            224.4,
+            -36.4,
+            177.8
+          ],
+          "distance_mm": 42.973945594976506,
+          "distance_sim": 0.21486972797488252
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            227.3,
+            -30.3,
+            163.7
+          ],
+          "distance_mm": 31.816190846799998,
+          "distance_sim": 0.15908095423399998
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            228.1,
+            -23.6,
+            162.4
+          ],
+          "distance_mm": 25.253316613862825,
+          "distance_sim": 0.12626658306931413
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            224.5,
+            -16.5,
+            161.0
+          ],
+          "distance_mm": 17.621010186706098,
+          "distance_sim": 0.08810505093353048
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            217.8,
+            -10.3,
+            147.3
+          ],
+          "distance_mm": 13.87155362603626,
+          "distance_sim": 0.0693577681301813
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            219.6,
+            -8.2,
+            146.8
+          ],
+          "distance_mm": 12.084701072016626,
+          "distance_sim": 0.06042350536008313
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            222.6,
+            -4.0,
+            147.1
+          ],
+          "distance_mm": 8.863972021616501,
+          "distance_sim": 0.044319860108082504
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        0.0,
+        0.24
+      ],
+      "goal_mm": [
+        223.0,
+        0.0,
+        173.0
+      ],
+      "final_position_mm": [
+        223.6,
+        -3.1,
+        163.3
+      ],
+      "final_distance_mm": 10.200980345045261,
+      "final_distance_sim": 0.0510049017252263,
+      "success": false,
+      "steps": 50,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            211.9,
+            -62.0,
+            218.9
+          ],
+          "distance_mm": 77.93599938411006,
+          "distance_sim": 0.3896799969205502
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            217.6,
+            -53.0,
+            211.9
+          ],
+          "distance_mm": 65.96491491694655,
+          "distance_sim": 0.3298245745847328
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            217.8,
+            -42.5,
+            175.6
+          ],
+          "distance_mm": 42.89580399060029,
+          "distance_sim": 0.21447901995300145
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            224.9,
+            -35.0,
+            175.6
+          ],
+          "distance_mm": 35.14783065852003,
+          "distance_sim": 0.17573915329260012
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            223.5,
+            -27.5,
+            170.6
+          ],
+          "distance_mm": 27.60905648514632,
+          "distance_sim": 0.13804528242573158
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            223.2,
+            -21.1,
+            167.3
+          ],
+          "distance_mm": 21.8572642386919,
+          "distance_sim": 0.1092863211934595
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            224.9,
+            -15.0,
+            169.7
+          ],
+          "distance_mm": 15.475787540542166,
+          "distance_sim": 0.07737893770271083
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            221.2,
+            -8.4,
+            164.0
+          ],
+          "distance_mm": 12.441864811996638,
+          "distance_sim": 0.06220932405998318
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            224.9,
+            -4.7,
+            164.3
+          ],
+          "distance_mm": 10.06926015157021,
+          "distance_sim": 0.050346300757851056
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            222.8,
+            -4.0,
+            162.3
+          ],
+          "distance_mm": 11.424972647669653,
+          "distance_sim": 0.05712486323834826
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            223.2,
+            -3.8,
+            162.8
+          ],
+          "distance_mm": 10.886689120205451,
+          "distance_sim": 0.05443344560102725
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            223.5,
+            -3.7,
+            163.3
+          ],
+          "distance_mm": 10.393748120865723,
+          "distance_sim": 0.051968740604328614
+        },
+        {
+          "step": 12,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 13,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 14,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 15,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 16,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 17,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 18,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 19,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 20,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 21,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 22,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 23,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 24,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 25,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 26,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 27,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 28,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 29,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 30,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 31,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 32,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 33,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 34,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 35,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 36,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 37,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 38,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 39,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 40,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 41,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 42,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 43,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 44,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 45,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 46,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 47,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 48,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        },
+        {
+          "step": 49,
+          "position_mm": [
+            223.6,
+            -3.1,
+            163.3
+          ],
+          "distance_mm": 10.200980345045261,
+          "distance_sim": 0.0510049017252263
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        0.09,
+        0.06
+      ],
+      "goal_mm": [
+        223.0,
+        18.0,
+        137.0
+      ],
+      "final_position_mm": [
+        221.6,
+        13.5,
+        129.5
+      ],
+      "final_distance_mm": 8.857764955111417,
+      "final_distance_sim": 0.04428882477555709,
+      "success": true,
+      "steps": 12,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.6,
+            -61.4,
+            217.6
+          ],
+          "distance_mm": 113.61725221109687,
+          "distance_sim": 0.5680862610554843
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            217.5,
+            -53.4,
+            212.0
+          ],
+          "distance_mm": 103.69768560580317,
+          "distance_sim": 0.5184884280290158
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            219.8,
+            -42.3,
+            174.9
+          ],
+          "distance_mm": 71.29333769715092,
+          "distance_sim": 0.3564666884857546
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            225.2,
+            -35.3,
+            176.5
+          ],
+          "distance_mm": 66.37755644794404,
+          "distance_sim": 0.3318877822397202
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            230.2,
+            -29.8,
+            159.9
+          ],
+          "distance_mm": 53.48915777987161,
+          "distance_sim": 0.26744578889935805
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            225.7,
+            -23.0,
+            159.2
+          ],
+          "distance_mm": 46.70256952245775,
+          "distance_sim": 0.23351284761228874
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            226.9,
+            -16.3,
+            142.0
+          ],
+          "distance_mm": 34.88122704263713,
+          "distance_sim": 0.17440613521318565
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            221.5,
+            -10.1,
+            143.0
+          ],
+          "distance_mm": 28.77255636887345,
+          "distance_sim": 0.14386278184436724
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            220.6,
+            -3.9,
+            132.3
+          ],
+          "distance_mm": 22.526872841120223,
+          "distance_sim": 0.1126343642056011
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            219.1,
+            1.4,
+            129.0
+          ],
+          "distance_mm": 18.83533912622759,
+          "distance_sim": 0.09417669563113795
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            220.9,
+            6.0,
+            129.4
+          ],
+          "distance_mm": 14.358621103713261,
+          "distance_sim": 0.07179310551856631
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            222.0,
+            10.5,
+            129.8
+          ],
+          "distance_mm": 10.444615837837208,
+          "distance_sim": 0.05222307918918604
+        },
+        {
+          "step": 12,
+          "position_mm": [
+            221.6,
+            13.5,
+            129.5
+          ],
+          "distance_mm": 8.857764955111417,
+          "distance_sim": 0.04428882477555709
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        0.09,
+        0.15
+      ],
+      "goal_mm": [
+        223.0,
+        18.0,
+        155.0
+      ],
+      "final_position_mm": [
+        222.5,
+        14.8,
+        145.7
+      ],
+      "final_distance_mm": 9.847842403288155,
+      "final_distance_sim": 0.04923921201644077,
+      "success": true,
+      "steps": 13,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            213.5,
+            -62.0,
+            215.0
+          ],
+          "distance_mm": 100.45023643575956,
+          "distance_sim": 0.5022511821787978
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            217.0,
+            -53.7,
+            212.4
+          ],
+          "distance_mm": 92.04156669679196,
+          "distance_sim": 0.46020783348395977
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            218.9,
+            -42.1,
+            175.7
+          ],
+          "distance_mm": 63.697017198609856,
+          "distance_sim": 0.31848508599304926
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            224.8,
+            -35.4,
+            174.5
+          ],
+          "distance_mm": 56.877499945057366,
+          "distance_sim": 0.2843874997252868
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            227.3,
+            -28.2,
+            164.8
+          ],
+          "distance_mm": 47.42330650640042,
+          "distance_sim": 0.23711653253200207
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            223.9,
+            -21.3,
+            156.2
+          ],
+          "distance_mm": 39.32861553627333,
+          "distance_sim": 0.19664307768136666
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            222.4,
+            -15.1,
+            150.2
+          ],
+          "distance_mm": 33.451606837340414,
+          "distance_sim": 0.16725803418670207
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            223.0,
+            -9.3,
+            149.0
+          ],
+          "distance_mm": 27.951565251341478,
+          "distance_sim": 0.13975782625670738
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            220.6,
+            -3.7,
+            145.0
+          ],
+          "distance_mm": 24.01353784847206,
+          "distance_sim": 0.12006768924236028
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            222.4,
+            1.4,
+            144.8
+          ],
+          "distance_mm": 19.492562684264982,
+          "distance_sim": 0.09746281342132491
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            222.3,
+            6.6,
+            144.8
+          ],
+          "distance_mm": 15.313066316058313,
+          "distance_sim": 0.07656533158029157
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            222.1,
+            10.7,
+            144.8
+          ],
+          "distance_mm": 12.575372757894685,
+          "distance_sim": 0.06287686378947342
+        },
+        {
+          "step": 12,
+          "position_mm": [
+            222.6,
+            13.0,
+            145.7
+          ],
+          "distance_mm": 10.566456359631655,
+          "distance_sim": 0.05283228179815827
+        },
+        {
+          "step": 13,
+          "position_mm": [
+            222.5,
+            14.8,
+            145.7
+          ],
+          "distance_mm": 9.847842403288155,
+          "distance_sim": 0.04923921201644077
+        }
+      ]
+    },
+    {
+      "goal_sim": [
+        0.09,
+        0.09,
+        0.24
+      ],
+      "goal_mm": [
+        223.0,
+        18.0,
+        173.0
+      ],
+      "final_position_mm": [
+        223.4,
+        14.2,
+        157.8
+      ],
+      "final_distance_mm": 15.67290655877204,
+      "final_distance_sim": 0.07836453279386019,
+      "success": false,
+      "steps": 50,
+      "trajectory": [
+        {
+          "step": 0,
+          "position_mm": [
+            212.1,
+            -61.3,
+            218.9
+          ],
+          "distance_mm": 92.2719350615343,
+          "distance_sim": 0.4613596753076714
+        },
+        {
+          "step": 1,
+          "position_mm": [
+            216.7,
+            -54.0,
+            213.6
+          ],
+          "distance_mm": 82.89782868085267,
+          "distance_sim": 0.41448914340426335
+        },
+        {
+          "step": 2,
+          "position_mm": [
+            214.8,
+            -44.0,
+            176.8
+          ],
+          "distance_mm": 62.65524718648868,
+          "distance_sim": 0.3132762359324434
+        },
+        {
+          "step": 3,
+          "position_mm": [
+            221.3,
+            -36.8,
+            171.6
+          ],
+          "distance_mm": 54.844233972223556,
+          "distance_sim": 0.2742211698611178
+        },
+        {
+          "step": 4,
+          "position_mm": [
+            219.6,
+            -30.0,
+            167.3
+          ],
+          "distance_mm": 48.456681685810885,
+          "distance_sim": 0.2422834084290544
+        },
+        {
+          "step": 5,
+          "position_mm": [
+            219.9,
+            -23.4,
+            164.1
+          ],
+          "distance_mm": 42.45915684513765,
+          "distance_sim": 0.21229578422568826
+        },
+        {
+          "step": 6,
+          "position_mm": [
+            221.2,
+            -16.8,
+            164.9
+          ],
+          "distance_mm": 35.77555031023282,
+          "distance_sim": 0.17887775155116412
+        },
+        {
+          "step": 7,
+          "position_mm": [
+            220.3,
+            -10.7,
+            161.4
+          ],
+          "distance_mm": 31.073139525963576,
+          "distance_sim": 0.15536569762981786
+        },
+        {
+          "step": 8,
+          "position_mm": [
+            223.6,
+            -5.1,
+            160.6
+          ],
+          "distance_mm": 26.224606765402605,
+          "distance_sim": 0.131123033827013
+        },
+        {
+          "step": 9,
+          "position_mm": [
+            225.7,
+            0.6,
+            160.0
+          ],
+          "distance_mm": 21.887210877587854,
+          "distance_sim": 0.10943605438793925
+        },
+        {
+          "step": 10,
+          "position_mm": [
+            225.7,
+            5.5,
+            160.0
+          ],
+          "distance_mm": 18.235679312819688,
+          "distance_sim": 0.09117839656409844
+        },
+        {
+          "step": 11,
+          "position_mm": [
+            224.7,
+            10.9,
+            157.7
+          ],
+          "distance_mm": 16.952580924449244,
+          "distance_sim": 0.08476290462224621
+        },
+        {
+          "step": 12,
+          "position_mm": [
+            225.5,
+            12.5,
+            158.7
+          ],
+          "distance_mm": 15.523852614605705,
+          "distance_sim": 0.07761926307302852
+        },
+        {
+          "step": 13,
+          "position_mm": [
+            223.0,
+            14.1,
+            157.4
+          ],
+          "distance_mm": 16.080111939908868,
+          "distance_sim": 0.08040055969954434
+        },
+        {
+          "step": 14,
+          "position_mm": [
+            223.0,
+            14.1,
+            157.4
+          ],
+          "distance_mm": 16.080111939908868,
+          "distance_sim": 0.08040055969954434
+        },
+        {
+          "step": 15,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 16,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 17,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 18,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 19,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 20,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 21,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 22,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 23,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 24,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 25,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 26,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 27,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 28,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 29,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 30,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 31,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 32,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 33,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 34,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 35,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 36,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 37,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 38,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 39,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 40,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 41,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 42,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 43,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 44,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 45,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 46,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 47,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 48,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        },
+        {
+          "step": 49,
+          "position_mm": [
+            223.4,
+            14.2,
+            157.8
+          ],
+          "distance_mm": 15.67290655877204,
+          "distance_sim": 0.07836453279386019
+        }
+      ]
+    }
+  ]
+}

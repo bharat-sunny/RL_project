@@ -1,0 +1,16 @@
+{
+  "experiment": "her_dense",
+  "seed": 1,
+  "total_timesteps": 50000,
+  "train_seconds": 378.2,
+  "best_eval_success_rate": 1.0,
+  "final_eval": {
+    "success_rate": 1.0,
+    "final_distance_mean": 0.02590767807676457,
+    "final_distance_std": 0.013437036209491842,
+    "episode_length_mean": 2.58,
+    "n_episodes": 100.0
+  },
+  "steps_to_50pct": 5000,
+  "steps_to_90pct": 8000
+}

@@ -1,0 +1,16 @@
+{
+  "experiment": "noher_sparse_hard",
+  "seed": 1,
+  "total_timesteps": 50000,
+  "train_seconds": 10795.3,
+  "best_eval_success_rate": 0.1,
+  "final_eval": {
+    "success_rate": 0.03,
+    "final_distance_mean": 0.1238095025997609,
+    "final_distance_std": 0.07746032971415576,
+    "episode_length_mean": 48.76,
+    "n_episodes": 100.0
+  },
+  "steps_to_50pct": null,
+  "steps_to_90pct": null
+}

@@ -1,0 +1,44 @@
+{
+  "obs_keys": [
+    "achieved_goal",
+    "desired_goal",
+    "observation"
+  ],
+  "obs_dims": {
+    "achieved_goal": 3,
+    "desired_goal": 3,
+    "observation": 6
+  },
+  "n_hidden_layers": 2,
+  "hidden_sizes": [
+    64,
+    64
+  ],
+  "action_dim": 3,
+  "action_low": [
+    -1.0,
+    -1.0,
+    -1.0
+  ],
+  "action_high": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "activation": "relu",
+  "output_activation": "tanh",
+  "experiment": "noher_dense",
+  "seed": 0,
+  "checkpoint": "best_model",
+  "backend": "panda",
+  "reward_type": "dense",
+  "domain_randomization": false,
+  "parity_check": {
+    "n_samples": 2000,
+    "max_abs_error": 4.7551983683918886e-05,
+    "mean_abs_error": 2.5682759329675747e-07,
+    "max_error_as_displacement_um": 2.3775991841959443,
+    "tolerance": 0.0001,
+    "passed": true
+  }
+}

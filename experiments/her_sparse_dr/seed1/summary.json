@@ -1,0 +1,16 @@
+{
+  "experiment": "her_sparse_dr",
+  "seed": 1,
+  "total_timesteps": 50000,
+  "train_seconds": 388.7,
+  "best_eval_success_rate": 1.0,
+  "final_eval": {
+    "success_rate": 1.0,
+    "final_distance_mean": 0.031010632272809743,
+    "final_distance_std": 0.009446188085358473,
+    "episode_length_mean": 2.99,
+    "n_episodes": 100.0
+  },
+  "steps_to_50pct": 4000,
+  "steps_to_90pct": 5000
+}
