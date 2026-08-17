@@ -1,266 +1,270 @@
 # Speaker notes — Muscle Memory for Machines
 
-**24 slides · target 14:41 (881 s).** The assignment requires 13:00–15:00.
+**24 slides · about 14:41 of talking.** The assignment asks for 13 to 15 minutes.
 
-Each slide gives **what the audience sees** and **what to say**, written to be spoken aloud rather than read. Every abbreviation on a slide is spelled out the first time it comes up in that slide's notes, so nothing has to be recalled mid-sentence.
+Written to be **spoken, not read**. Short sentences, plain words. Every short name on a slide is spelled out the first time it comes up in that slide's notes.
 
-Times are a guide — if you run long, compress the background section (slides 5–7), not the results. The demo on slide 21 is embedded in the deck: click the video to play it in PowerPoint.
+Don't memorise it. Read it out loud a couple of times, then say it in your own words — the notes are there so you never lose the thread, not so you recite them.
+
+If you're running long, shorten slides 5 to 7 (the background). Never rush the results or the demo.
+
+The video on slide 21 is inside the deck. Just click it in PowerPoint.
 
 ---
 
-## Abbreviations, in one place
+## Short names, in one place
 
-| Short | Full | What it means |
+| Short | Full name | What it means |
 |---|---|---|
-| **SAC** | Soft Actor-Critic | the learning algorithm used here |
-| **HER** | Hindsight Experience Replay | the relabeling trick — the core idea |
-| **DDPG** | Deep Deterministic Policy Gradient | the 2016 method that first made continuous control work |
-| **TD3** | Twin Delayed DDPG | the 2018 fix for DDPG's over-optimistic critic |
-| **DR** | Domain Randomisation | varying the simulator so the real world is one more variation |
-| **MLP** | Multi-Layer Perceptron | a plain neural network — the policy is a small one |
-| **MDP** | Markov Decision Process | the formal way of writing down a decision problem |
-| **EE** | end-effector | the business end of the arm — the gripper tip |
-| **DoF** | degrees of freedom | how many independent joints the arm has; this one has six |
-| **RL** | Reinforcement Learning | learning by trial and consequence |
+| **SAC** | Soft Actor-Critic | the learning method I used |
+| **HER** | Hindsight Experience Replay | the main trick — learning from failures |
+| **DDPG** | Deep Deterministic Policy Gradient | an older method, from 2016 |
+| **TD3** | Twin Delayed DDPG | a 2018 fix for a problem in DDPG |
+| **DR** | Domain Randomisation | shaking up the simulator so the agent copes with anything |
+| **MLP** | Multi-Layer Perceptron | a plain, simple neural network |
+| **MDP** | Markov Decision Process | the standard way to write down a decision problem |
+| **EE** | end-effector | the tip of the arm |
+| **DoF** | degrees of freedom | how many joints the arm has — this one has six |
+| **RL** | Reinforcement Learning | learning by trying things and seeing what works |
 
 ---
 
 ## Slide 1 — *0:00 · 15s*
 
-**On screen:** Title: 'Muscle Memory for Machines'. Your name and date.
+**What's on screen:** Title slide with your name and the date.
 
-**Say:**
+**Say this:**
 
-Hi, I'm Bharat. This project is called Muscle Memory for Machines. The idea is simple to state: teach a robot arm to reach targets entirely inside a computer simulation, then take that trained brain, put it on a real robot arm, and measure honestly how much of it still works. I'll walk through the problem, how I built it, what I found, and I'll show you the real arm running at the end.
+Hi, I'm Bharat. My project is called Muscle Memory for Machines. Here's the idea in one sentence. I taught a robot arm to reach targets inside a computer simulation. Then I put that trained brain onto a real robot arm. And I measured how much of it still worked. I'll cover the problem, how I built it, what I found, and I'll show you the real arm at the end.
 
 ---
 
 ## Slide 2 — *0:15 · 42s*
 
-**On screen:** Four numbered steps down the left; a photo of the real myCobot arm on the right. The slide says 'SAC agent' and '6-DoF'.
+**What's on screen:** Four numbered steps on the left. A photo of the real arm on the right. The slide says 'SAC agent' and '6-DoF'.
 
-**Say:**
+**Say this:**
 
-Here's the whole project in four steps. First, I train an agent in simulation. The algorithm is Soft Actor-Critic — that's what SAC stands for on the slide, and I'll come back to it. It learns to reach a target using the strictest possible feedback: zero when it arrives, minus one at every other moment. Nothing else. Second, I take pieces away one at a time to find out which ones actually matter — that's the ablation, and I run every condition three times with different random seeds so I'm not fooled by luck. Third, I put the trained policy on the arm you see on the right, a myCobot 280. Six DoF means six degrees of freedom — six independent joints. And note it is not the robot it trained on. Fourth, I run twenty-seven trials on the real machine to measure the gap, with a classical controller running on the same arm as my reference point.
+Here's the whole project in four steps. Step one. I train an agent in a simulator. The method is called Soft Actor-Critic. That's what SAC means on the slide. I'll explain it shortly. The agent gets very simple feedback. Zero when it reaches the target. Minus one every other moment. That's all it ever gets. Step two. I remove one piece at a time to see which pieces actually matter. I run everything three times with different random starting points, so I'm not fooled by luck. Step three. I put the trained agent on the arm you see on the right. Six DoF just means six joints. And this is not the robot it trained on. Step four. I run twenty-seven tests on the real arm and measure how well it does.
 
 ---
 
 ## Slide 3 — *0:57 · 38s*
 
-**On screen:** Three blocks: sparse reward, the reality gap, why not train on the robot.
+**What's on screen:** Three boxes: sparse reward, the reality gap, and why not train on the robot.
 
-**Say:**
+**Say this:**
 
-Reaching sounds easy, so let me explain why it isn't. Two problems. The first is sparse reward. The honest way to describe this task is binary — you either reached the target or you didn't. That's a specification you can't cheat. But it's also nearly impossible to learn from, because an untrained arm essentially never hits an arbitrary point in space by accident. So it collects thousands of experiences that all say 'minus one', and it can't tell a good move from a bad one. The second problem is the reality gap: a policy tuned against perfect simulated physics meets a real machine with calibration errors, communication delay, and motors that don't land exactly where you tell them. And you might ask, why not just train on the real robot? Because this needs somewhere between a hundred thousand and a million attempts. At about a second each, that's weeks of continuous motion and thousands of manual resets. So: train in simulation, then transfer deliberately and measure.
+Reaching for a point sounds easy. Let me explain why it isn't. There are two problems. The first is the feedback. I only tell the agent one thing: did you reach the target, yes or no. That's honest, and it can't be cheated. But it's very hard to learn from. An untrained arm almost never hits a random point by accident. So it collects thousands of tries that all say 'no'. It can't tell a good move from a bad one. The second problem is that simulators are not real life. The real arm has small errors. It's slightly out of calibration. There's a delay in the cable. The motors don't stop exactly where you tell them. You might ask, why not just train on the real robot? Because it needs hundreds of thousands of tries. At a second each, that's weeks of nonstop movement. It isn't practical. So I train in simulation first, then move across carefully.
 
 ---
 
 ## Slide 4 — *1:35 · 25s*
 
-**On screen:** Four bullet objectives carried over from the Part 1 plan.
+**What's on screen:** Four bullet points listing the goals from the Part 1 plan.
 
-**Say:**
+**Say this:**
 
-These are the four objectives I committed to in my Part 1 plan, and they haven't changed. Learn reaching from sparse reward. Measure what hindsight relabeling actually contributes by removing it. Test whether randomising the simulator helps the transfer. And deploy to a real arm to measure the gap rather than just assert it. I want to be clear up front — I'm not claiming a new algorithm. Everything I use is published. The contribution is the measurement.
+These are the four things I promised in my Part 1 plan. They haven't changed. Learn to reach using that yes-or-no feedback. Find out how much the main trick actually helps, by taking it away. Test whether shaking up the simulator helps the move to real hardware. And put it on a real arm and measure the drop, instead of just guessing at it. One thing I want to say clearly. I'm not inventing a new method here. Everything I use is published work. What's mine is the measurement.
 
 ---
 
 ## Slide 5 — *2:00 · 50s*
 
-**On screen:** Three blocks on off-policy learning, the algorithm lineage, and why SAC. The slide shows the acronyms DDPG, TD3, SAC and HER.
+**What's on screen:** Three boxes about the learning method. The slide shows DDPG, TD3, SAC and HER.
 
-**Say:**
+**Say this:**
 
-A quick word on the algorithm, and let me unpack the acronyms on the slide as I go. Because the robot moves continuously — it's not picking from a menu of moves, it's choosing how far to travel in each direction — I need a particular family of methods. The key property is 'off-policy', which means the agent learns from a stored memory of past attempts, not just what it did most recently. That matters enormously here, because that memory is exactly where the trick on the next slide operates. Now the lineage. DDPG is Deep Deterministic Policy Gradient, from 2016. It was the method that first made continuous control work, by using two networks: one that proposes an action and one that scores it. TD3 — Twin Delayed DDPG, from 2018 — found that DDPG's scoring network was systematically too optimistic, and fixed it by training two scorers and always believing the more pessimistic one. And SAC, Soft Actor-Critic, adds one more idea: it rewards the agent for staying a bit random, which keeps it exploring instead of locking on to a mediocre habit. That's what I use. HER on the slide is Hindsight Experience Replay — the next slide is entirely about it. And Stable-Baselines3 provides a validated implementation, so I'm not debugging my own version of the algorithm.
+A quick word on the method, and I'll explain the short names as I go. The robot doesn't pick from a menu of moves. It chooses how far to travel in each direction. There are endless possible moves. That rules out a lot of standard approaches. The important feature is that my agent keeps a memory of everything it has tried, and learns from that memory. Not just from what it did a moment ago. That memory is where the main trick of this project happens. Now the history on the slide. DDPG stands for Deep Deterministic Policy Gradient, from 2016. It was the first method that handled these endless move options. It used two networks. One suggests a move. The other scores how good that move is. TD3 came in 2018. It stands for Twin Delayed DDPG. People found the scoring network was too optimistic. It kept overrating moves. TD3 fixed that by using two scorers and always trusting the more cautious one. SAC stands for Soft Actor-Critic. It adds one more idea. It rewards the agent for staying a bit unpredictable. That keeps it exploring instead of settling for the first okay habit it finds. That's the one I use. HER on the slide stands for Hindsight Experience Replay. The next slide is all about it.
 
 ---
 
 ## Slide 6 — *2:50 · 47s*
 
-**On screen:** Three blocks on goal-conditioning and Hindsight Experience Replay, with the 0 of 1,000 → 219 of 3,920 figure at the bottom.
+**What's on screen:** Three boxes about learning from failure. A key number at the bottom.
 
-**Say:**
+**Say this:**
 
-This is the central idea of the project, so let me take it slowly. Hindsight Experience Replay — HER — is what the slide is about. Every episode has a different target, so the goal is fed into the network as an input, which means one network handles every possible target. Now here's the trick. Suppose I ask the arm to reach point A, and it ends up at point B. As an attempt at A, that's a failure with nothing to learn from. But look at it differently: it is a perfect demonstration of how to reach B. So I store that episode twice — once as it was asked, and once with the goal rewritten to what actually happened. Nothing is faked. Same movements, same physics. Only the question changes. And the effect is dramatic. In one episode on my harder task, zero out of a thousand stored experiences carried any useful signal. After relabeling, two hundred and nineteen out of three thousand nine hundred did. That's the difference between having something to learn from and having nothing at all.
+This is the most important idea in the project, so I'll go slowly. It's called Hindsight Experience Replay. HER for short. Every attempt has a different target, so I feed the target into the network as an input. That way one network handles every possible target. Now here's the trick. Say I ask the arm to reach point A. It misses, and ends up at point B. As an attempt at A, that's a failure. Nothing to learn. But look at it another way. It's a perfect example of how to reach B. So I save that attempt twice. Once as it was asked. And once with the target rewritten to where it actually went. Nothing is faked here. Same movement, same physics. I just ask a different question about it. And the effect is big. In one attempt on my harder task, zero out of a thousand saved experiences had anything useful in them. After the rewrite, two hundred and nineteen out of nearly four thousand did. That's the difference between having something to learn from and having nothing.
 
 ---
 
 ## Slide 7 — *3:37 · 28s*
 
-**On screen:** Two blocks: domain randomisation, and the dynamics-only version used here.
+**What's on screen:** Two boxes about shaking up the simulator.
 
-**Say:**
+**Say this:**
 
-The other technique I need is domain randomisation. The insight is that instead of trying to model the real robot perfectly — which you can't — you deliberately vary the simulator's settings every single episode. Different delay, different calibration error, different noise. The agent can never over-fit to one version, so it learns something robust across all of them, and the real robot becomes just one more variation it has already handled. I randomise the dynamics — timing and control error — rather than appearance, because my gap is mechanical, not visual. The policy never sees a camera image at any point.
+The other technique I need is called domain randomisation. The idea is nice. Instead of trying to build a perfect copy of the real robot, which you can't do anyway, you deliberately change the simulator's settings every single attempt. Different delay. Different errors. Different noise. The agent never gets used to one version. So it learns something that works across all of them. Then the real robot is just one more version it has already handled. I change the movement and timing, not the way things look. My problem is mechanical, not visual. The agent never sees a camera picture at any point.
 
 ---
 
 ## Slide 8 — *4:05 · 40s*
 
-**On screen:** A five-row table: State, Goal, Action, Reward, Tolerance. 'EE position' appears in the Goal row.
+**What's on screen:** A table with five rows: State, Goal, Action, Reward, Tolerance. 'EE' appears in it.
 
-**Say:**
+**Say this:**
 
-Here's the formal setup — the slide calls it a Markov Decision Process, which is just the standard way of writing down a decision problem. The state is where the hand is and how fast it's moving. EE in that table means end-effector, which is the business end of the arm — the gripper tip. The arm reports that position itself, so I don't need a camera, and that's exactly why I chose reaching rather than picking things up. The action is the important design decision: a small movement in x, y and z — task space, not individual joint angles. I'll come back to why that one choice is what makes this whole project possible. The reward is the binary one we discussed. And the tolerance — how close counts as arriving — is five centimetres on the standard task and two on the hard one. I set that deliberately above the arm's own measured precision, because asking for accuracy the machine doesn't have would be testing the wrong thing.
+Here's the setup written out properly. What the agent sees is where the arm's tip is, and how fast it's moving. EE in that table just means end-effector, which is the tip of the arm. The arm reports its own position, so I don't need a camera. That's exactly why I chose reaching rather than picking things up. What the agent does is the key design choice. It moves the tip a small distance left or right, forward or back, up or down. It does not control individual joints. I'll explain in a moment why that one choice makes the whole project possible. The feedback is the yes-or-no one we talked about. And the tolerance is how close counts as arriving. Five centimetres on the normal task, two on the hard one. I set that on purpose to be looser than the arm's own accuracy. Asking for precision the machine doesn't have would be testing the wrong thing.
 
 ---
 
 ## Slide 9 — *4:45 · 38s*
 
-**On screen:** Three blocks: SAC + HER, two different robots, and why that's deliberate. 'MLP actor' appears in the first block.
+**What's on screen:** Three boxes: the method, two different robots, and why that's on purpose. 'MLP actor' appears in the first box.
 
-**Say:**
+**Say this:**
 
-So the agent is Soft Actor-Critic combined with Hindsight Experience Replay — SAC plus HER. MLP there means multi-layer perceptron, which is just a plain neural network; mine is a small one. Now the disclosure I want to make clearly. The robot I train on is a Franka Panda inside a physics simulator. The robot I deploy to is a myCobot 280. These are completely different machines — different sizes, different joints, different everything. The only thing they share is that both accept 'move the hand this far in this direction'. That's why the task-space action choice matters so much: what has to transfer is a workspace, not a mechanical design. And I'd argue this is actually the realistic case. Most people who want to use reinforcement learning on a robot do not have an accurate simulator of their exact hardware. So the mismatch is part of what I'm measuring, not a shortcut.
+So the agent is Soft Actor-Critic plus Hindsight Experience Replay. SAC plus HER. MLP there just means a plain neural network. Mine is a small one. Now something I want to be upfront about. The robot I trained on is a Franka Panda, inside a simulator. The robot I deployed to is a myCobot 280. These are completely different machines. Different size, different joints, different everything. The only thing they have in common is that both accept 'move the tip this far in this direction'. That's why that action choice mattered so much. What has to carry across is a space to move in, not a mechanical design. And honestly, I think this is the realistic situation. Most people who want to use this on a robot don't have an accurate simulator of their exact machine. So the mismatch is part of what I'm measuring. It isn't a shortcut.
 
 ---
 
 ## Slide 10 — *5:23 · 32s*
 
-**On screen:** A four-row table of experiments. Abbreviations SAC, HER and DR appear in the comparison column.
+**What's on screen:** A table of the four experiments. SAC, HER and DR appear in it.
 
-**Say:**
+**Say this:**
 
-Four experiments. Quick key to the table: SAC is Soft Actor-Critic, HER is Hindsight Experience Replay, and DR is domain randomisation. Every condition runs three times with different random seeds, and every single setting — network size, learning rate, batch size — is identical across them. That's deliberate: it means any difference I see is caused by the thing I changed, not by tuning. Experiment one is the headline ablation. Two asks whether I still need to hand-craft the reward. Three measures what randomisation costs me. And four is the transfer study on the physical arm.
+Four experiments. Quick key to the table. SAC is Soft Actor-Critic. HER is Hindsight Experience Replay. DR is domain randomisation. Every experiment runs three times with different random starting points. And every setting is identical across them. Same network size, same learning rate, everything. That's on purpose. It means any difference I see comes from the thing I changed, not from tuning. Experiment one is the main test. Two asks if I still need to hand-design the feedback. Three measures what the randomising costs me. And four is the real robot.
 
 ---
 
 ## Slide 11 — *5:55 · 34s*
 
-**On screen:** Three blocks: training stack, the dual-purpose wrapper, and safety. '64×64 MLP actor' appears in the first block.
+**What's on screen:** Three boxes: what I built, the reusable wrapper, and safety. '64×64 MLP actor' appears in the first box.
 
-**Say:**
+**Say this:**
 
-On implementation. Stable-Baselines3 supplies the Soft Actor-Critic implementation — that's the SAC on the slide — and panda-gym is the simulator. The policy is a 64-by-64 MLP — multi-layer perceptron, a plain neural network with two hidden layers of sixty-four units. That's about five thousand numbers, forty-five kilobytes, which becomes important on the next slide. All twenty-one training runs regenerate with one command, and every chart in this deck rebuilds from raw output files, so nothing here is hand-typed. The piece I'm most pleased with is the middle block: I wrote a single component that models the four ways the real arm differs from the simulator, and it does two jobs. Turn the randomness on and it's domain randomisation during training. Freeze it at the values I measured on the actual robot, and it becomes a dress rehearsal I can test against before touching hardware. And on safety — every command to the arm goes through one function that clamps it into a box I verified, so there's no code path that skips the check.
+On what I actually built. I used a library called Stable-Baselines3 for the Soft Actor-Critic method, and panda-gym as the simulator. The trained brain is a small neural network. MLP means multi-layer perceptron, which is just a plain network. Mine has two layers of sixty-four units. That's about five thousand numbers in total. Forty-five kilobytes. That size matters on the next slide. All twenty-one training runs rebuild with one command, and every chart in this deck is generated from the raw output. Nothing here is typed in by hand. The middle box is the part I'm most pleased with. I wrote one piece of code that models the four ways the real arm differs from the simulator. It does two jobs. Switch the randomness on, and it's the training technique. Freeze it at the values I measured on the real robot, and it becomes a rehearsal I can test against before touching hardware. And on safety. Every command to the arm goes through one function that keeps it inside a box I checked by hand. There's no way to skip that check.
 
 ---
 
 ## Slide 12 — *6:29 · 35s*
 
-**On screen:** Four blocks: the problem, the approach, the risk, and the guard.
+**What's on screen:** Four boxes: the problem, my approach, the risk, and the safeguard.
 
-**Say:**
+**Say this:**
 
-Here's an engineering decision worth explaining. Getting PyTorch — the deep learning framework — installed on a small embedded board is a classic way to lose two days at the worst possible moment. And the robot only ever needs to run the network forward, never train it. So I export the trained weights to plain number arrays and rewrite the calculation in about fifteen lines: two simple layers and one squashing function. The robot needs nothing but NumPy. But that trade creates a real hazard. If I feed the inputs in a different order than during training, I get a policy that runs perfectly happily and drives the arm to completely the wrong place — and nothing would tell me. So the export refuses to finish unless my version reproduces the original across two thousand random inputs. The leftover difference works out to about half a micrometre of commanded movement, far below anything the motors can even resolve.
+Here's a decision worth explaining. PyTorch is the big software library used to train these networks. Installing it on a small robot computer is a classic way to lose two days at the worst moment. And the robot never needs to train anything. It only needs to run the finished network once per step. So I saved the trained numbers to a plain file and rewrote the calculation in about fifteen lines of simple code. The robot needs almost nothing installed. But that creates a real danger. If I feed the numbers in the wrong order, I get a policy that looks completely healthy and sends the arm to the wrong place. Nothing would warn me. So I wrote a check. The export refuses to finish unless my simple version gives the same answer as the original, across two thousand random test cases. The difference that's left is about half a micrometre of movement. That's far smaller than the motors can even move.
 
 ---
 
 ## Slide 13 — *7:04 · 42s*
 
-**On screen:** Learning-curve chart: blue is with relabeling, orange without. Both climb to 1.0.
+**What's on screen:** A chart with two curves. Blue uses the trick, orange doesn't. Both reach the top.
 
-**Say:**
+**Say this:**
 
-First result, and it is not the one I predicted. Blue is the agent with hindsight relabeling. Orange is exactly the same agent without it. Blue gets to a hundred percent very fast. But look at orange — it gets there too, just slower. My hypothesis said that without relabeling, success would stay near zero. That's wrong, and I want to say so plainly. The reason is that this task is easier than I assumed. The target is five centimetres wide in a thirty-centimetre space, so random flailing actually hits it about eighteen percent of the time — and that's enough accidental success to get learning started. So on this task, relabeling isn't what makes it possible. It makes it about three times faster.
+First result. And it's not what I predicted. Blue is the agent with the relabeling trick. Orange is exactly the same agent without it. Blue reaches a hundred percent very quickly. But look at orange. It gets there too. Just slower. I predicted that without the trick, the agent would stay stuck near zero. I was wrong, and I want to say that plainly. Here's why. This task is easier than I assumed. The target is five centimetres wide in a thirty-centimetre space. So random flailing actually hits it about eighteen percent of the time. That's enough lucky success to get learning started. So on this task, the trick isn't what makes it possible. It makes it about three times faster.
 
 ---
 
 ## Slide 14 — *7:46 · 45s*
 
-**On screen:** Same style of chart, hard task. Blue near 1.0; orange flat near zero.
+**What's on screen:** Same kind of chart on the harder task. Blue near the top, orange flat at the bottom.
 
-**Say:**
+**Say this:**
 
-Now, my Part 1 plan anticipated this exact situation. It said in advance: if the control condition also learns, the task is too easy to show the mechanism, and the fix is to shrink the target and enlarge the workspace. So that's what I did — two centimetres instead of five, forty centimetres instead of thirty. Nothing else changed. And here's the number that ties it together, measured not assumed: random success drops from eighteen percent to one percent. Eighteen times less accidental reward. And now look at the separation. With relabeling, ninety-nine point three percent. Without it, two percent. On this task it genuinely is the difference between learning and not learning at all.
+Now, my Part 1 plan predicted this exact situation might happen. It said: if the version without the trick also learns, then the task is too easy to show anything, and the fix is to make the target smaller and the space bigger. So that's what I did. Two centimetres instead of five. Forty centimetres instead of thirty. Nothing else changed. And here's the number that explains everything, and I measured it rather than guessed. Random success drops from eighteen percent to one percent. Eighteen times less luck. Now look at the gap. With the trick, ninety-nine percent. Without it, two percent. On this task it really is the difference between learning and not learning at all.
 
 ---
 
 ## Slide 15 — *8:31 · 35s*
 
-**On screen:** Two charts side by side: reward-design comparison, and steps-to-90% efficiency. 'HER' appears in the caption.
+**What's on screen:** Two charts side by side. Reward comparison on the left, speed on the right.
 
-**Say:**
+**Say this:**
 
-Experiment two asks a practical question. Reward shaping — giving the agent a helpful signal like 'you're getting warmer' — is the usual way people make sparse tasks tractable. It's also where reward hacking comes from, because you're now optimising a stand-in for what you actually want. The result on the left is that sparse reward plus Hindsight Experience Replay matches the shaped reward. So you can keep the honest objective. And on the right is where relabeling really pays: it reaches ninety percent success in about four thousand steps versus nearly thirteen thousand without. On a real robot, at a second per step, that's the difference between an afternoon and a week.
+Experiment two asks a practical question. The usual way to make these tasks easier is to give the agent hints. Tell it you're getting warmer, you're getting colder. But that's also where cheating comes from, because now the agent is chasing the hint instead of the real goal. The result on the left is that the strict yes-or-no feedback plus Hindsight Experience Replay does just as well as the version with hints. So I can keep the honest goal. And on the right is where the trick really pays off. It reaches ninety percent success in about four thousand tries, versus nearly thirteen thousand without. On a real robot, that's the difference between an afternoon and a week.
 
 ---
 
 ## Slide 16 — *9:06 · 27s*
 
-**On screen:** Learning curves for randomised vs standard policy — both at 1.0.
+**What's on screen:** Two curves for the randomised and normal agent. Both reach the top.
 
-**Say:**
+**Say this:**
 
-Experiment three trains the agent under all that randomised noise and then scores it on the clean simulator. I expected a small penalty — the robustness-versus-specialisation trade-off. There isn't one. Both sit at a hundred percent, because the five-centimetre tolerance simply absorbs the disturbances. So measured purely in simulation, randomisation looks free and pointless. Whether it actually buys anything is a question only the real arm can answer — and it does, in two slides.
+Experiment three. I train the agent with all that randomness switched on, then test it on the clean simulator. I expected it to do slightly worse. A jack of all trades usually is. It doesn't. Both sit at a hundred percent. The five-centimetre target is simply big enough to absorb the noise. So measured only in the simulator, the randomising looks free and pointless. Whether it actually helps is something only the real arm can tell me. And it does, in two slides.
 
 ---
 
 ## Slide 17 — *9:33 · 40s*
 
-**On screen:** A five-row table of measurements taken on the physical arm.
+**What's on screen:** A table of five things I measured on the real arm.
 
-**Say:**
+**Say this:**
 
-Before running any policy on the robot, I measured the robot. These aren't decoration — every one of these numbers feeds back into the simulation settings. The two I want you to look at are in the middle. Repeatability: if I send the arm to the same point over and over, it lands within eight tenths of a millimetre every time. It is very precise. But accuracy: it sits several millimetres away from where I actually told it to go. So it's precise but inaccurate — it reliably goes to slightly the wrong place. That distinction runs through everything that follows, because a consistent offset is something a feedback loop can fight, and random scatter is not. One more thing this uncovered: the arm's reachable region is a shell, not a solid ball — points can fail for being too close as well as too far — which limited my workspace to six centimetres and forced a ten-millimetre tolerance. That's uncomfortably close to the machine's own error, and it matters in a moment.
+Before running anything on the robot, I measured the robot. These aren't just interesting facts. Every one of these numbers gets fed back into my simulator settings. The two I want you to look at are in the middle. Repeatability. If I send the arm to the same spot over and over, it lands within less than a millimetre every time. It's very consistent. But accuracy. It sits several millimetres away from where I actually told it to go. So the arm is consistent but off. It reliably goes to slightly the wrong place. That difference matters for everything that follows, because a consistent error is something you can correct for. Random jitter isn't. One more thing I found. The area the arm can reach is a shell, not a solid ball. Points can fail for being too close as well as too far. That limited my working area to six centimetres, and forced a ten-millimetre target. That's uncomfortably close to the arm's own error, and it matters shortly.
 
 ---
 
 ## Slide 18 — *10:13 · 43s*
 
-**On screen:** Grouped bar chart: three controllers across clean sim, surrogate, and real hardware.
+**What's on screen:** A bar chart. Three controllers across three conditions.
 
-**Say:**
+**Say this:**
 
-Here's the transfer result. Three conditions, same policies. On the clean simulator, everything is at a hundred percent. In the middle is the surrogate — that's simulation, but with the disturbances I actually measured on this arm dialled in. Still a hundred percent. And then on the real robot, it drops to eighty-nine percent. So my hypothesis that transfer degrades is confirmed. But notice what that middle bar buys me. Because I tested against the measured disturbances first and nothing happened, I can say the loss is not caused by calibration offset, gain error, sensor noise, or delay. Those were my four suspects, and the surrogate ruled them out. And here's the domain randomisation result that only hardware could reveal: the randomised policy is indistinguishable in simulation but better on the real arm — ninety-three against eighty-nine percent, cutting the gap by a third.
+Here's the main result. Three conditions, same agents. On the clean simulator, everything is at a hundred percent. The middle group is what I called the rehearsal. That's still the simulator, but with the exact errors I measured on the real arm switched on. Still a hundred percent. And then on the real robot, it drops to eighty-nine percent. So yes, performance degrades. That's what I predicted. But look at what that middle group tells me. I tested with the real measured errors and nothing happened. So the drop is not caused by calibration error, or delay, or sensor noise. Those were my four suspects, and this ruled them out. And here's the result that only the real robot could show. The agent trained with randomness looks identical in simulation, but does better on the real arm. Ninety-three percent against eighty-nine. It cuts the drop by a third.
 
 ---
 
 ## Slide 19 — *10:56 · 40s*
 
-**On screen:** Curve chart: success rate against tolerance, three controllers, learned ones on top.
+**What's on screen:** A chart with three curves. The two learned agents sit above the classic controller.
 
-**Say:**
+**Say this:**
 
-This is the result I want to spend the most time on, because my plan got it backwards. I wrote that a classical controller would probably beat the learned policy, since reaching is a solved problem in robotics. On the real arm the ordering reversed. The analytic controller — the exact mathematical solution — scored sixty-seven percent. Both learned policies beat it. Now, one success rate at one threshold is fragile when that threshold sits near the machine's own error, so this chart shows the whole picture: success rate for every possible definition of 'close enough'. The learned policies are above the classical controller at every single one. So it isn't an accident of where I drew the line.
+This is the result I most want to talk about, because I predicted it backwards. I wrote in my plan that a traditional, hand-written controller would probably beat my learned agent. Reaching is a solved problem in robotics, after all. On the real arm, the opposite happened. The traditional controller — the exact mathematical solution — got sixty-seven percent. Both of my learned agents beat it. Now, a single score at a single cutoff can be misleading, especially when that cutoff is close to the machine's own error. So this chart shows every possible cutoff. How often does each one land within one millimetre, two, five, and so on. The learned agents are above the traditional one everywhere on this chart. So it's not a trick of where I drew the line.
 
 ---
 
 ## Slide 20 — *11:36 · 35s*
 
-**On screen:** Chart of step size against remaining distance; the analytic controller's collapses.
+**What's on screen:** A chart showing how big each step is as the arm gets closer.
 
-**Say:**
+**Say this:**
 
-So why does the optimal controller lose? The arm has that systematic offset of about six millimetres. A classical proportional controller commands smaller and smaller movements as it gets closer, so it comes to rest at exactly the point where its shrinking command is cancelled by that offset. It's stuck, and it has no way to know. The learned policy was trained where every extra step costs another minus one, so it has no incentive to slow down — it keeps pushing until it actually arrives. You can see it in the chart: close to the target, the classical controller's movements collapse while the policy keeps moving. And here's an independent confirmation — the classical controller used twenty-two steps per trial against eleven to thirteen for the policy, and still ended up further away. It isn't being slow. It's stuck.
+So why does the perfect controller lose? Remember the arm is always off by about six millimetres, in a consistent direction. A traditional controller takes smaller and smaller steps as it gets closer. Eventually its step gets so small that it's cancelled out by that six-millimetre error. So it stops. And it has no way of knowing it's stuck. My agent was trained where every extra step costs it. So it has no reason to slow down. It keeps pushing until it actually arrives. You can see it here. Close to the target, the traditional controller's steps collapse, and the agent's don't. And here's a second clue that says the same thing. The traditional controller took twenty-two steps per attempt, versus eleven to thirteen for my agent, and still ended up further away. It isn't being careful. It's stuck.
 
 ---
 
 ## Slide 21 — *12:11 · 65s*
 
-**On screen:** Video of the arm reaching, with live overlay. Two text blocks beside it.
+**What's on screen:** The demo video, with information drawn on top. Two text boxes beside it.
 
-**Say:**
+**Say this:**
 
-[CLICK TO PLAY THE VIDEO — let it run about 45 seconds, talking over it] This is the trained policy on the real arm. Let me tell you what you're looking at. The panels in the corner are the important part: the circle is the target, and it's drawn to the size of the ten-millimetre tolerance, so when the dot is inside the ring, that counts as a success. The dot is the arm. There are two panels because the targets vary in height as well as position — one view can't show that. The bar along the bottom is the live distance to the target. What I want you to notice is how direct the approach is. That's not an accident; that's what the sparse reward selects for, because every extra step costs it. And one thing on the caption at the bottom: the policy is reading the arm's own position sensors. It is not using the camera. The camera is only filming. Across this run it got twelve out of twelve, averaging eight point two millimetres from the target.
+[CLICK THE VIDEO TO PLAY IT — let it run about forty-five seconds while you talk] This is the trained agent on the real arm. Let me tell you what you're looking at. The two small panels in the corner are the important part. The circle is the target. It's drawn exactly the size of the allowed error, so when the dot is inside the circle, that counts as a success. The dot is the arm. There are two panels because the targets are at different heights as well as different positions. One view can't show both. The bar at the bottom is the live distance to the target. What I'd like you to notice is how directly it goes. That's not decoration. That's what the strict feedback produces, because every extra step costs it. One note on the caption at the bottom. The agent is reading the arm's own position sensors. It is not using the camera. The camera is only there to film. Across this run it got twelve out of twelve, averaging about eight millimetres from the target.
 
 ---
 
 ## Slide 22 — *13:16 · 35s*
 
-**On screen:** Three blocks: physical risk, reliability, and scope limits.
+**What's on screen:** Three boxes about safety, reliability and limits.
 
-**Say:**
+**Say this:**
 
-A policy that moves real mass creates obligations a simulator doesn't. This arm operates near people, so the workspace limits, the low speeds, and requiring a human present aren't precautions I added at the end — they're design requirements, and no policy touched the hardware until its outputs were verified offline. Second, and I think this is the important one: a success rate is not a safety claim. Saying eighty-nine percent tells you nothing about whether the other eleven percent fails gently or fails badly — and for a lot of real deployments that's the only question that matters. And third, scope. This is one arm, in one room, on one set of targets, and the hardware runs used a single seed. The randomisation improvement is a difference of one trial. It points the right way, but I would not claim it's statistically established, and I'd rather say that than let it slide.
+A system that moves real weight creates responsibilities a simulator doesn't. This arm works near people. So the movement limits, the low speed, and needing a person present aren't things I added at the end. They were requirements from the start. And no agent touched the hardware until I'd checked its output offline first. Second point, and I think it's the important one. A success rate is not a safety claim. Saying eighty-nine percent tells you nothing about whether the other eleven percent fails gently or fails badly. For a lot of real uses, that's the only question that matters. And third, the limits of what I've shown. One arm. One room. One set of targets. And the hardware tests ran only once each. The improvement from randomising is a difference of a single test. It points the right way, but I wouldn't claim it's properly proven, and I'd rather say that than gloss over it.
 
 ---
 
 ## Slide 23 — *13:51 · 40s*
 
-**On screen:** Five conclusion bullets, ending with future work.
+**What's on screen:** Five closing points, ending with what comes next.
 
-**Say:**
+**Say this:**
 
-To close. The most useful thing I learned is that both of my strongest predictions were wrong, and being wrong taught me more than being right would have. Relabeling's value isn't fixed — it depends on how genuinely sparse the reward is, and I can now put numbers on that: a speed-up when accidental success is eighteen percent, and essential when it's one percent. Second, sparse reward really is enough once you have relabeling, so you can keep the honest objective instead of engineering a proxy. Third, the classical controller lost, and the trajectory data explains why — sparse reward produced a policy that refuses to ease off, and that is exactly what defeats a steady-state offset. And fourth, the thing I'd carry into any future sim-to-real work: staging the evaluation in three steps is what turned a vague 'it got worse' into an actual diagnosis. Going forward — add a camera so goals aren't typed in by hand, move to tasks where no classical solution exists, measure the arm properly instead of randomising blindly, and run more seeds on hardware. Thank you — happy to take questions.
+To finish. The most useful thing I learned is that both of my strongest predictions were wrong. And being wrong taught me more than being right would have. First, the relabeling trick isn't equally valuable everywhere. It depends on how hard the task really is. It's a speed boost when luck gets you eighteen percent. It's essential when luck only gets you one percent. And now I can put numbers on that. Second, the strict yes-or-no feedback is enough, as long as you have the trick. So you can keep the honest goal instead of designing hints. Third, the traditional controller lost, and I can explain why from the data. The strict feedback produced an agent that refuses to slow down. And that's exactly what beats a consistent error. Fourth, the thing I'd take into any future project like this. Testing in three stages instead of one is what turned a vague 'it got worse' into an actual diagnosis. What I'd do next. Add a camera so the targets aren't typed in by hand. Try tasks where no traditional solution exists. Measure the arm properly instead of guessing at the randomness. And run more tests on the hardware. Thank you. Happy to take questions.
 
 ---
 
 ## Slide 24 — *14:31 · 10s*
 
-**On screen:** Reference list. 'deep RL' appears in the Ibarz entry.
+**What's on screen:** The reference list.
 
-**Say:**
+**Say this:**
 
-And these are the main sources — RL there is just reinforcement learning. The full list is in the repository and in my Part 1 report.
+And these are my main sources. RL there just means reinforcement learning. The full list is in my repository and in the Part 1 report.
 
 ---
