@@ -147,7 +147,6 @@ scp jetson@192.168.3.211:~/RL_project/results/hardware_characterization.json ./r
 scp jetson@192.168.3.211:~/RL_project/configs/calibration.json ./configs/
 
 python -m src.analysis          # adds fig5 (sim-to-real) and fig6 (error spread)
-python slides/build_slides.py   # folds the real numbers into the deck
 ```
 
 ---

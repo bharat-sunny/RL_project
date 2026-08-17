@@ -35,3 +35,6 @@ results/hardware/dryrun/
 # Raw or intermediate captures are not.
 demo/raw/
 *.mov
+
+# PowerPoint / Office lock files (created while a document is open)
+~$*

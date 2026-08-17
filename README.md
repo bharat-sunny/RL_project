@@ -232,9 +232,6 @@ python -m src.record_demo --experiment her_sparse --seed 0 --episodes 6
 # 6 · Tests
 python -m pytest tests/ -q
 
-# 7 · Presentation deck (pulls every number from results/ at build time)
-python slides/build_slides.py
-python slides/check_layout.py       # flags text overflow or collisions
 ```
 
 Task geometry can be re-probed with `python -m src.envs`, which rewrites
@@ -316,7 +313,7 @@ Then copy results back and fold them into the figures:
 scp -r jetson@<ip>:'~/RL_project/results/hardware' ./results/
 scp jetson@<ip>:'~/RL_project/results/hardware_characterization.json' ./results/
 scp jetson@<ip>:'~/RL_project/configs/calibration.json' ./configs/
-python -m src.analysis && python slides/build_slides.py
+python -m src.analysis
 ```
 
 **Why the third run matters.** The success tolerance scales with the calibrated
@@ -359,7 +356,7 @@ hardware/                   robot-side code — NumPy + pymycobot only
   deploy.py                 Experiment 4 — the trial grid
   recorder.py               annotated video capture from inside the trial loop
 
-slides/                     presentation deck generator + layout checker
+slides/                     presentation deck and speaker notes
 tests/                      32 tests — safety, coordinate map, export, wrappers
 scripts/                    setup_workstation.sh, sync_to_jetson.sh
 configs/                    simulator geometry, measured arm calibration
