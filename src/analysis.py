@@ -170,8 +170,9 @@ def plot_reward_design(summaries: pd.DataFrame) -> Path | None:
 
     ax.set_xticks(x)
     ax.set_xticklabels(["Sparse binary reward", "Dense shaped reward"])
-    ax.set_ylim(0, 1.16)
-    ax.legend(loc="upper right")
+    ax.set_ylim(0, 1.22)
+    # Bars sit at 1.00 with labels above them, so an inset legend lands on the data.
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.09), ncol=2, frameon=False)
     finish(ax, "Reward design and hindsight relabeling",
            "Final success rate, mean of 3 seeds, 100 evaluation episodes each",
            None, "Success rate")
@@ -466,8 +467,7 @@ def plot_approach_behaviour(hardware: dict) -> Path | None:
 
     ax.legend(loc="upper left")
     finish(ax, "The analytic controller eases off near the target; the policies do not",
-           "Displacement achieved per control step, binned by distance remaining. "
-           "Episodes end at the 10 mm tolerance, so no bin sits below it.",
+           "Displacement per control step, binned by distance remaining",
            "Distance still to travel (mm)", "Displacement per step (mm)")
     fig.tight_layout()
 
@@ -628,7 +628,7 @@ def main() -> None:
     plot_learning_curves(
         ["her_sparse_hard", "noher_sparse_hard"], "fig2_her_ablation_hard.png",
         "Experiment 1b — the same ablation on the harder task",
-        "2 cm tolerance in a 40 cm workspace: ~27x less chance of reaching the goal by accident.")
+        "2 cm tolerance in a 40 cm workspace: random-policy success falls from 18% to 1%.")
     plot_reward_design(summaries)
     plot_sample_efficiency(summaries)
     plot_learning_curves(
