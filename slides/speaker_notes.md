@@ -1,6 +1,6 @@
 # Speaker notes — Muscle Memory for Machines
 
-**24 slides · about 14:41 of talking.** The assignment asks for 13 to 15 minutes.
+**24 slides · about 14:44 of talking.** The assignment asks for 13 to 15 minutes.
 
 Written to be **spoken, not read**. Short sentences, plain words. Every short name on a slide is spelled out the first time it comes up in that slide's notes.
 
@@ -26,20 +26,21 @@ The video on slide 21 is inside the deck. Just click it in PowerPoint.
 | **EE** | end-effector | the tip of the arm |
 | **DoF** | degrees of freedom | how many joints the arm has — this one has six |
 | **RL** | Reinforcement Learning | learning by trying things and seeing what works |
+| **sim-to-real** | simulation to reality | train it on a computer, then move it onto the real machine |
 
 ---
 
-## Slide 1 — *0:00 · 15s*
+## Slide 1 — *0:00 · 18s*
 
-**What's on screen:** Title slide with your name and the date.
+**What's on screen:** Title slide with your name and the date. The subtitle says 'sim-to-real'.
 
 **Say this:**
 
-Hi, I'm Bharat. My project is called Muscle Memory for Machines. Here's the idea in one sentence. I taught a robot arm to reach targets inside a computer simulation. Then I put that trained brain onto a real robot arm. And I measured how much of it still worked. I'll cover the problem, how I built it, what I found, and I'll show you the real arm at the end.
+Hi, I'm Bharat. My project is called Muscle Memory for Machines. The subtitle says sim-to-real. That just means simulation to reality. Train it on a computer, then move it onto a real machine. So here's the idea in one sentence. I taught a robot arm to reach targets inside a computer simulation. Then I put that trained brain onto a real robot arm. And I measured how much of it still worked. I'll cover the problem, how I built it, what I found, and I'll show you the real arm at the end.
 
 ---
 
-## Slide 2 — *0:15 · 42s*
+## Slide 2 — *0:18 · 42s*
 
 **What's on screen:** Four numbered steps on the left. A photo of the real arm on the right. The slide says 'SAC agent' and '6-DoF'.
 
@@ -49,7 +50,7 @@ Here's the whole project in four steps. Step one. I train an agent in a simulato
 
 ---
 
-## Slide 3 — *0:57 · 38s*
+## Slide 3 — *1:00 · 38s*
 
 **What's on screen:** Three boxes: sparse reward, the reality gap, and why not train on the robot.
 
@@ -59,7 +60,7 @@ Reaching for a point sounds easy. Let me explain why it isn't. There are two pro
 
 ---
 
-## Slide 4 — *1:35 · 25s*
+## Slide 4 — *1:38 · 25s*
 
 **What's on screen:** Four bullet points listing the goals from the Part 1 plan.
 
@@ -69,7 +70,7 @@ These are the four things I promised in my Part 1 plan. They haven't changed. Le
 
 ---
 
-## Slide 5 — *2:00 · 50s*
+## Slide 5 — *2:03 · 50s*
 
 **What's on screen:** Three boxes about the learning method. The slide shows DDPG, TD3, SAC and HER.
 
@@ -79,7 +80,7 @@ A quick word on the method, and I'll explain the short names as I go. The robot 
 
 ---
 
-## Slide 6 — *2:50 · 47s*
+## Slide 6 — *2:53 · 47s*
 
 **What's on screen:** Three boxes about learning from failure. A key number at the bottom.
 
@@ -89,7 +90,7 @@ This is the most important idea in the project, so I'll go slowly. It's called H
 
 ---
 
-## Slide 7 — *3:37 · 28s*
+## Slide 7 — *3:40 · 28s*
 
 **What's on screen:** Two boxes about shaking up the simulator.
 
@@ -99,7 +100,7 @@ The other technique I need is called domain randomisation. The idea is nice. Ins
 
 ---
 
-## Slide 8 — *4:05 · 40s*
+## Slide 8 — *4:08 · 40s*
 
 **What's on screen:** A table with five rows: State, Goal, Action, Reward, Tolerance. 'EE' appears in it.
 
@@ -109,7 +110,7 @@ Here's the setup written out properly. What the agent sees is where the arm's ti
 
 ---
 
-## Slide 9 — *4:45 · 38s*
+## Slide 9 — *4:48 · 38s*
 
 **What's on screen:** Three boxes: the method, two different robots, and why that's on purpose. 'MLP actor' appears in the first box.
 
@@ -119,7 +120,7 @@ So the agent is Soft Actor-Critic plus Hindsight Experience Replay. SAC plus HER
 
 ---
 
-## Slide 10 — *5:23 · 32s*
+## Slide 10 — *5:26 · 32s*
 
 **What's on screen:** A table of the four experiments. SAC, HER and DR appear in it.
 
@@ -129,7 +130,7 @@ Four experiments. Quick key to the table. SAC is Soft Actor-Critic. HER is Hinds
 
 ---
 
-## Slide 11 — *5:55 · 34s*
+## Slide 11 — *5:58 · 34s*
 
 **What's on screen:** Three boxes: what I built, the reusable wrapper, and safety. '64×64 MLP actor' appears in the first box.
 
@@ -139,7 +140,7 @@ On what I actually built. I used a library called Stable-Baselines3 for the Soft
 
 ---
 
-## Slide 12 — *6:29 · 35s*
+## Slide 12 — *6:32 · 35s*
 
 **What's on screen:** Four boxes: the problem, my approach, the risk, and the safeguard.
 
@@ -149,7 +150,7 @@ Here's a decision worth explaining. PyTorch is the big software library used to 
 
 ---
 
-## Slide 13 — *7:04 · 42s*
+## Slide 13 — *7:07 · 42s*
 
 **What's on screen:** A chart with two curves. Blue uses the trick, orange doesn't. Both reach the top.
 
@@ -159,7 +160,7 @@ First result. And it's not what I predicted. Blue is the agent with the relabeli
 
 ---
 
-## Slide 14 — *7:46 · 45s*
+## Slide 14 — *7:49 · 45s*
 
 **What's on screen:** Same kind of chart on the harder task. Blue near the top, orange flat at the bottom.
 
@@ -169,7 +170,7 @@ Now, my Part 1 plan predicted this exact situation might happen. It said: if the
 
 ---
 
-## Slide 15 — *8:31 · 35s*
+## Slide 15 — *8:34 · 35s*
 
 **What's on screen:** Two charts side by side. Reward comparison on the left, speed on the right.
 
@@ -179,7 +180,7 @@ Experiment two asks a practical question. The usual way to make these tasks easi
 
 ---
 
-## Slide 16 — *9:06 · 27s*
+## Slide 16 — *9:09 · 27s*
 
 **What's on screen:** Two curves for the randomised and normal agent. Both reach the top.
 
@@ -189,7 +190,7 @@ Experiment three. I train the agent with all that randomness switched on, then t
 
 ---
 
-## Slide 17 — *9:33 · 40s*
+## Slide 17 — *9:36 · 40s*
 
 **What's on screen:** A table of five things I measured on the real arm.
 
@@ -199,7 +200,7 @@ Before running anything on the robot, I measured the robot. These aren't just in
 
 ---
 
-## Slide 18 — *10:13 · 43s*
+## Slide 18 — *10:16 · 43s*
 
 **What's on screen:** A bar chart. Three controllers across three conditions.
 
@@ -209,7 +210,7 @@ Here's the main result. Three conditions, same agents. On the clean simulator, e
 
 ---
 
-## Slide 19 — *10:56 · 40s*
+## Slide 19 — *10:59 · 40s*
 
 **What's on screen:** A chart with three curves. The two learned agents sit above the classic controller.
 
@@ -219,7 +220,7 @@ This is the result I most want to talk about, because I predicted it backwards. 
 
 ---
 
-## Slide 20 — *11:36 · 35s*
+## Slide 20 — *11:39 · 35s*
 
 **What's on screen:** A chart showing how big each step is as the arm gets closer.
 
@@ -229,7 +230,7 @@ So why does the perfect controller lose? Remember the arm is always off by about
 
 ---
 
-## Slide 21 — *12:11 · 65s*
+## Slide 21 — *12:14 · 65s*
 
 **What's on screen:** The demo video, with information drawn on top. Two text boxes beside it.
 
@@ -239,7 +240,7 @@ So why does the perfect controller lose? Remember the arm is always off by about
 
 ---
 
-## Slide 22 — *13:16 · 35s*
+## Slide 22 — *13:19 · 35s*
 
 **What's on screen:** Three boxes about safety, reliability and limits.
 
@@ -249,7 +250,7 @@ A system that moves real weight creates responsibilities a simulator doesn't. Th
 
 ---
 
-## Slide 23 — *13:51 · 40s*
+## Slide 23 — *13:54 · 40s*
 
 **What's on screen:** Five closing points, ending with what comes next.
 
@@ -259,7 +260,7 @@ To finish. The most useful thing I learned is that both of my strongest predicti
 
 ---
 
-## Slide 24 — *14:31 · 10s*
+## Slide 24 — *14:34 · 10s*
 
 **What's on screen:** The reference list.
 
